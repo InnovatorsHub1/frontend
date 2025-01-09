@@ -7,19 +7,27 @@ import './index.css';
 import { createStore } from './store';
 import SuspenseUntilReady from './components/SuspenseUntilReady';
 
-const store = createStore();
+const gradientStyle = `
+    font-size: 20px;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(90deg, #89cff0, #6a9cf1, #43b0f1, #29b6f6);
+    -webkit-background-clip: text;
+    display: inline-block;
+`;
 
+const store = createStore();
 function Client() {
   return (
     <StrictMode>
       <SuspenseUntilReady
         asyncFn={async () => {
-          console.log('Application is up and running!');
+          console.log('%c Innovation Hub Application is Up !', gradientStyle);
         }}
       >
-      <StoreProvider store={store}>
-        <BrowserRouter>
-          <App />
+        <StoreProvider store={store}>
+          <BrowserRouter>
+            <App />
           </BrowserRouter>
         </StoreProvider>
       </SuspenseUntilReady>

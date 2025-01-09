@@ -88,7 +88,19 @@
   }
 }
 
-/* @layer components {} */
+@layer components {
+  @keyframes loader {
+    0% {
+      transform: scaleX(0);
+    }
+    50% {
+      transform: scaleX(0.7);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+}
 
 @layer utilities {
   .no-scrollbar {

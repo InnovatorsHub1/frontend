@@ -1,5 +1,6 @@
-# Vite + React + Tailwind + Eslint + Prettier (for json) + Biome + React router
+# Innovation Hub Community - first project
 
-This template provides a minimal setup to get React working in Vite with HMR and my custom ESLint rules (using ezlint).
+### Sources:
 
-Vite config uses the SWC plugin for fast refreshes.
+- [storybook docs](https://storybook.js.org/docs/get-started/install)
+- []()
