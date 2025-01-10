@@ -7,7 +7,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs', 'new'],
+  tags: ['new'],
 } satisfies Meta<typeof Loader>;
 
 export default meta;

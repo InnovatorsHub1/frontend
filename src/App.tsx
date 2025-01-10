@@ -3,7 +3,7 @@ import Layout from './components/Layout';
 import PageNotFound from './pages/PageNotFound';
 import { routes } from './routes';
 import { Suspense } from 'react';
-import { CombinedLoaders } from './components/Loaders/CombinedLoaders';
+import CombinedLoaders from './components/Loaders/CombinedLoaders';
 
 export default function App() {
   return (

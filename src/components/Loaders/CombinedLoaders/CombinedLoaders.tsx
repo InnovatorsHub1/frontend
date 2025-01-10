@@ -6,7 +6,7 @@ export default function CombinedLoaders() {
     <>
       <TopNavLoader />
 
-      <div className='w-full min-h-screen-minus-100 flex flex-col items-center justify-center'>
+      <div className='w-full h-screen flex flex-col items-center justify-center'>
         <Loader />
       </div>
     </>

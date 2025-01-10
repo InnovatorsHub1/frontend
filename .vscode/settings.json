@@ -21,6 +21,7 @@
   "editor.dragAndDrop": false, // <--- defaults to "true". Decides if drag and drop of code lines is allowed/possible. I always hated this feature.
   "editor.gotoLocation.multipleDefinitions": "goto", // <--- I FOUND IT!!!! No more peeking !!! default value was peek
   "editor.gotoLocation.multipleReferences": "peek", // <--- I FOUND IT!!!! When a reference was mis-spelled, it couldn't perform the goto operation, so it gets stuck in the same place.
+  "explorer.compactFolders": false,
   // "files.autoSave": "off", // Defaults to false. Possible options: off | onFocusChange | afterDelay | onWindowChange
   // "files.autoSaveDelay": 1000,
   // "files.refactoring.autoSave": true,

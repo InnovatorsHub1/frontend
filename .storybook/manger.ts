@@ -6,7 +6,7 @@ import {
 
 addons.setConfig({
     tagBadges: [
-        // custom tag
+        // TODO - make custom tag work
         {
             tags: 'frog',
             badge: {

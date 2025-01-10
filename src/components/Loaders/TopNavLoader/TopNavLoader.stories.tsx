@@ -9,7 +9,7 @@ const meta = {
   parameters: {
     layout: 'fullscreen',
   },
-  tags: ['autodocs', 'stable'],
+  tags: ['stable'],
   decorators: [
     (Story: ComponentType) => (
       <div style={{ height: '20vh' }}>

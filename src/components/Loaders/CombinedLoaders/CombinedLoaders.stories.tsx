@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ComponentType } from 'react';
 import CombinedLoaders from './CombinedLoaders';
 import '@src/index.css';
 
@@ -9,14 +8,7 @@ const meta = {
   parameters: {
     layout: 'fullscreen',
   },
-  tags: ['autodocs', 'frog'],
-  decorators: [
-    (Story: ComponentType) => (
-      <div style={{ height: '30vh' }}>
-        <Story />
-      </div>
-    ),
-  ],
+  tags: ['!autodocs', 'alpha', 'version:1.0.0'],
 } satisfies Meta<typeof CombinedLoaders>;
 
 export default meta;

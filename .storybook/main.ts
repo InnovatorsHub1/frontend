@@ -6,12 +6,17 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
     '@storybook/addon-essentials',
     '@chromatic-com/storybook',
+    'storybook-addon-tag-badges',
     '@storybook/addon-interactions',
     'storybook-addon-tag-badges'
   ],
   framework: {
     name: '@storybook/react-vite',
     options: {},
+  },
+  docs: {
+    defaultName: 'Documentation',
+    autodocs: true,
   },
 };
 export default config;
