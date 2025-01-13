@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import { createStore } from './store';
 import SuspenseUntilReady from './components/SuspenseUntilReady';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
 
 const gradientStyle = `
     font-size: 20px;
@@ -26,9 +28,11 @@ function Client() {
         }}
       >
         <StoreProvider store={store}>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
+          <I18nextProvider i18n={i18n}>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </I18nextProvider>
         </StoreProvider>
       </SuspenseUntilReady>
     </StrictMode>

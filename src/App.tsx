@@ -4,6 +4,7 @@ import PageNotFound from './pages/PageNotFound';
 import { routes } from './routes';
 import { Suspense } from 'react';
 import CombinedLoaders from './components/Loaders/CombinedLoaders';
+import './i18n';
 
 export default function App() {
   return (
