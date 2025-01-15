@@ -5,7 +5,7 @@ import { routes } from './routes';
 import { Suspense } from 'react';
 import CombinedLoaders from './components/Loaders/CombinedLoaders';
 import './i18n';
-
+// example
 export default function App() {
   return (
     <Layout>
