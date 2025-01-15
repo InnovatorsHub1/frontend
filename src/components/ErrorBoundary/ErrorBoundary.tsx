@@ -32,8 +32,8 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
     if (this.state.hasError) {
       return (
         <ErrorPage
-          title='Oops!'
-          message='Something went wrong.'
+          title='Oops! Something went wrong'
+          message='We encountered an error. Please try again later.'
           code={500}
           onRetry={() => this.setState({ hasError: false })}
         />
