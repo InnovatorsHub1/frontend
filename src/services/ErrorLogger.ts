@@ -7,6 +7,9 @@ interface ErrorLoggerService {
 const ErrorLogger: ErrorLoggerService = {
   logError: (error, context) => {
     console.error('Error logged:', error, context);
+    console.error('User Info:', context?.userInfo);
+    console.error('Environment:', context?.environment);
+    // In the future we should send error to an error tracking service
   },
   getErrorMetadata: () => {
     return {
