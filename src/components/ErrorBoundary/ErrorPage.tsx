@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface ErrorPageProps {
+type ErrorPageProps = {
   title: string;
   message: string;
   code?: number;
@@ -8,7 +8,7 @@ interface ErrorPageProps {
   actions?: React.ReactNode[];
   onRetry?: () => void;
   className?: string;
-}
+};
 
 const ErrorPage: React.FC<ErrorPageProps> = ({ title, message, code, illustration, actions, onRetry, className }) => {
   return (

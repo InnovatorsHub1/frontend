@@ -4,7 +4,6 @@ import PageNotFound from './pages/PageNotFound';
 import { routes } from './routes';
 import { Suspense } from 'react';
 import CombinedLoaders from './components/Loaders/CombinedLoaders';
-import TestError from './components/ErrorBoundary/TestError';
 
 export default function App() {
   return (
@@ -18,8 +17,6 @@ export default function App() {
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </Suspense>
-      {/* this testError component will throw an error when the button is clicked*/}
-      <TestError />
     </Layout>
   );
 }

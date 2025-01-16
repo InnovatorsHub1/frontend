@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+import TestErrorPage from './components/ErrorBoundary/TestErrorPage';
 
 const HomePage = lazy(() => import('./pages/Home'));
 const ReduxExamplePage = lazy(() => import('./pages/ReduxExample'));
@@ -15,5 +16,10 @@ export const routes = [
     text: 'Redux Example',
     activeNames: ['/redux'],
     Component: ReduxExamplePage,
+  },
+  // just for testing the error boundary
+  {
+    to: '/test-error',
+    Component: TestErrorPage,
   },
 ];

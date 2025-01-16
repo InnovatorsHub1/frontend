@@ -2,16 +2,16 @@ import ErrorLogger from '@src/services/ErrorLogger';
 import React from 'react';
 import ErrorPage from './ErrorPage';
 
-interface ErrorBoundaryProps {
+type ErrorBoundaryProps = {
   fallback?: React.ReactNode;
   onError?: (error: Error, errorInfo: React.ErrorInfo) => void;
   children: React.ReactNode;
-}
+};
 
-interface ErrorBoundaryState {
+type ErrorBoundaryState = {
   hasError: boolean;
   error: Error | null;
-}
+};
 
 class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
   state: ErrorBoundaryState = {
