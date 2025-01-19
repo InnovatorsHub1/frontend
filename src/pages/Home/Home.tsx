@@ -6,7 +6,23 @@ export default function HomePage() {
     <div className='size-full p-6'>
       <div>Main</div>
       <div>window</div>
-     
+
+      <GenericButton 
+          
+          variant='primary'
+          size='sm'
+          icon={<Delete/>}
+          iconPosition ='left'
+          padding= '24px'
+          fontSize= '24px'
+          margin={20}
+          type='button'
+          active={true}
+          >
+          Test222
+         
+      </GenericButton>
+
       <GenericButton 
           
           variant='primary'
@@ -18,7 +34,21 @@ export default function HomePage() {
           margin={20}
           type='button'
           >
-          Test222
+          Test123
+         
+      </GenericButton>
+      <GenericButton 
+          
+          variant='primary'
+          size='sm'
+          icon={<Delete/>}
+          iconPosition ='left'
+          padding= '24px'
+          fontSize= '24px'
+          margin={20}
+          type='button'
+          >
+          Test222345
          
       </GenericButton>
         
