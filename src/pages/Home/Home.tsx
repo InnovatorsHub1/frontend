@@ -8,12 +8,13 @@ export default function HomePage() {
       <div>window</div>
      
       <GenericButton 
-
+          
           variant='primary'
           size='sm'
           icon={<Delete/>}
           iconPosition ='left'
-          className='btn-container'     
+          padding= '24px'
+          margin={20}
           type='button'
           >
           Test222
