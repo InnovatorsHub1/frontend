@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import GenericButton from '@src/components/Button/GenericButton';
-
+import { Delete } from '@mui/icons-material';
 export default function HomePage() {
   return (
     <div className='size-full p-6'>
@@ -11,10 +11,12 @@ export default function HomePage() {
 
           variant='primary'
           size='sm'
+          icon={<Delete/>}
           iconPosition ='left'
           className='btn-container'     
-          type='button'>
-          Test
+          type='button'
+          >
+          Test222
          
       </GenericButton>
         
