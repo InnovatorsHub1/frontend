@@ -1,11 +1,22 @@
 import { Button } from '@mui/material';
-import { Email } from '@mui/icons-material';
-import { TextInput } from '@src/components/inputs/TextInput/TextInput';
-import React from 'react';
+import { PasswordInput } from '@src/components/inputs/PasswordInput/PasswordInput';
+import { useState } from 'react';
+
 
 export default function HomePage() {
 
-  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = useState('');
+
+  const customRequirements = [
+    {
+      label: 'Minimum 12 characters',
+      validator: (value:string) => value.length >= 12
+    },
+    {
+      label: 'Contains your name',
+      validator: (value:string) => value.toLowerCase().includes('john')
+    }
+  ];
 
   return (
     <div className='size-full p-6'>
@@ -18,16 +29,16 @@ export default function HomePage() {
       <Button variant='contained' href='#contained-buttons'>
         Link
       </Button>
-      <TextInput
-        label="Email Address"
-        value={email}
-        onChange={setEmail}
-        startIcon={<Email />}
-        clearable
-        maxLength={50}
-        showCharacterCount
-        helperText="Enter your email address"
-        labelPosition="floating"
+      
+
+      <PasswordInput
+        label="Password"
+        value={password}
+        onChange={setPassword}
+        showPasswordStrength
+        showRequirements
+        customRequirements={customRequirements} // Optional
+        helperText="Enter your password"
         required
       />
     </div>
