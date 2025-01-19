@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { routes as routesRaw } from '@src/routes';
 import SideBarLinkItem from './SideBarLinkItem';
-import SSOLoginButton from '@src/components/auth/ssoLogin';
+
 
 export default function SideBarLinkList() {
   const { pathname } = useLocation();

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import SideBarLinkList from './SideBarLinkList';
 
 export default function Sidebar() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <nav
