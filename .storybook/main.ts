@@ -3,12 +3,13 @@ import type { StorybookConfig } from '@storybook/react-vite';
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    '@storybook/addon-onboarding',
+    '@storybook/addon-links', 
     '@storybook/addon-essentials',
+    '@storybook/addon-onboarding',
+    '@storybook/addon-interactions',
+    '@storybook/addon-docs', 
     '@chromatic-com/storybook',
     'storybook-addon-tag-badges',
-    '@storybook/addon-interactions',
-    'storybook-addon-tag-badges'
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -18,5 +19,13 @@ const config: StorybookConfig = {
     defaultName: 'Documentation',
     autodocs: true,
   },
+  core: {
+    builder: '@storybook/builder-vite',
+  },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    check: true,
+  }
 };
+
 export default config;

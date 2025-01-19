@@ -14,6 +14,7 @@
     // Section 2: Language and Environment
     // -----------------------------------
     "target": "ESNext",
+
     "jsx": "react-jsx", // Specify what JSX code is generated.
     "lib": ["ESNext", "DOM", "DOM.Iterable"], // adding the "DOM" library helps vs-code to recognize the window & document objects. Specify a set of bundled library declaration files that describe the target runtime environment.
     "useDefineForClassFields": true, // Emit ECMAScript-standard-compliant class fields.
@@ -127,5 +128,6 @@
   },
   "compileOnSave": true,
   "exclude": ["node_modules", "**/node_modules/*", "<node_internals>/**", "bin/**"],
-  "include": ["src", "jest.config.js"]
+  "include": ["src", "jest.config.js"],
+  "types": ["jest", "@testing-library/jest-dom"]
 }

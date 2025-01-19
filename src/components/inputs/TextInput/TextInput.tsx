@@ -18,6 +18,7 @@ interface TextInputProps extends BaseInputProps {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   labelPosition?: 'top' | 'left' | 'floating';
+  placeholder?: string;
 }
 
 export const TextInput: React.FC<TextInputProps> = ({
@@ -35,6 +36,7 @@ export const TextInput: React.FC<TextInputProps> = ({
   endIcon,
   labelPosition = 'floating',
   sx,
+  placeholder,
   ...props
 }) => {
   // Handle text change with maxLength constraint
@@ -73,6 +75,7 @@ export const TextInput: React.FC<TextInputProps> = ({
             disabled={disabled}
             size="small"
             aria-label="clear input"
+            data-testid="clear-button"
           >
             <Clear />
           </IconButton>
@@ -91,7 +94,11 @@ export const TextInput: React.FC<TextInputProps> = ({
   };
 
   return (
-    <Box sx={containerStyles}>
+    <Box 
+      sx={containerStyles} 
+      data-testid="text-input-container"
+      className={error ? 'Mui-error' : ''}
+    >
       <FormControl
         error={!!error}
         disabled={disabled}
@@ -105,6 +112,7 @@ export const TextInput: React.FC<TextInputProps> = ({
           error={!!error}
           disabled={disabled}
           required={required}
+          placeholder={placeholder}
           variant="outlined"
           InputProps={{
             startAdornment: getStartAdornment(),
@@ -138,6 +146,7 @@ export const TextInput: React.FC<TextInputProps> = ({
               variant="caption"
               color={value.length === maxLength ? 'error' : 'textSecondary'}
               sx={{ flexShrink: 0 }}
+              data-testid="char-count"
             >
               {value.length}{maxLength ? `/${maxLength}` : ''} characters
             </Typography>

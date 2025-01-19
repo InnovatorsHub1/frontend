@@ -1,0 +1,94 @@
+import { Meta, Primary, Controls, Story } from '@storybook/blocks';
+import * as TextInputStories from './TextInput.stories';
+
+<Meta of={TextInputStories} />
+
+# TextInput
+
+A versatile text input component built on Material-UI's TextField with additional features.
+
+## Features
+
+- Label positioning (top, left, floating)
+- Character count with optional maximum length
+- Clearable input with icon button
+- Start and end icons support
+- Error states and helper text
+- Required field indication
+- Disabled state support
+
+## Usage
+
+```tsx
+import { TextInput } from './TextInput';
+import { Email } from '@mui/icons-material';
+
+// Basic usage
+<TextInput
+  label="Email"
+  value={email}
+  onChange={setEmail}
+  startIcon={<Email />}
+/>
+
+// With character limit
+<TextInput
+  label="Message"
+  value={message}
+  onChange={setMessage}
+  maxLength={100}
+  showCharacterCount
+/>
+
+// With error state
+<TextInput
+  label="Username"
+  value={username}
+  onChange={setUsername}
+  error="Username is already taken"
+/>
+```
+
+## Props
+
+### Required Props
+
+- `label` - Text label for the input
+- `value` - Current value of the input
+- `onChange` - Callback function when value changes
+
+### Optional Props
+
+- `error` - Error message to display
+- `helperText` - Helper text to display below the input
+- `disabled` - Whether the input is disabled
+- `required` - Whether the input is required
+- `maxLength` - Maximum number of characters allowed
+- `showCharacterCount` - Whether to show character count
+- `clearable` - Whether to show clear button
+- `startIcon` - Icon to show at start of input
+- `endIcon` - Icon to show at end of input
+- `labelPosition` - Position of label ('top', 'left', 'floating')
+
+<Primary />
+
+## Examples
+
+### Default Input
+<Story of={TextInputStories.Default} />
+
+### With Icons
+<Story of={TextInputStories.WithIcons} />
+
+### With Character Count
+<Story of={TextInputStories.WithCharacterCount} />
+
+### With Error State
+<Story of={TextInputStories.WithError} />
+
+### With All Features
+<Story of={TextInputStories.FullFeatured} />
+
+## Component API
+
+<Controls />
