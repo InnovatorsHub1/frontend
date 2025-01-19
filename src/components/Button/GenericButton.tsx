@@ -18,6 +18,8 @@ interface ButtonProps {
   //using with props by the way rest parmaters and spread opertaors into style inline 
   padding?: number | string;
   margin?: number | string;
+  fontSize?: number | string;
+  
   // Event handlers
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 
@@ -42,6 +44,7 @@ export default function GenericButton({
   // Map custom props to MUI-compatible props
   const muiVariant = variant === 'outlined' || variant === 'text' ? variant : 'contained';
   const muiSize = size === 'sm' ? 'small' : size === 'lg' ? 'large' : 'medium';
+  const sizeIcon = size === 'sm' ? 'small' : size === 'lg' ? 'large' : 'medium';
   console.log('children:', children);
   return (
     <Button
@@ -54,7 +57,6 @@ export default function GenericButton({
       onClick={onClick}
       style={{ ...props}}
       type={type}
-
     >
       {loading ? loading : children}
     </Button>

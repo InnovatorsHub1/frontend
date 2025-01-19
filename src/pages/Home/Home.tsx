@@ -14,6 +14,7 @@ export default function HomePage() {
           icon={<Delete/>}
           iconPosition ='left'
           padding= '24px'
+          fontSize= '24px'
           margin={20}
           type='button'
           >
