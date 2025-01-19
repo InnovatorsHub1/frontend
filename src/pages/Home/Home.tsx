@@ -1,22 +1,24 @@
 import { Button } from '@mui/material';
 import { PasswordInput } from '@src/components/inputs/PasswordInput/PasswordInput';
+import { SearchInput } from '@src/components/inputs/SearchInput/SearchInput';
 import { useState } from 'react';
 
 
 export default function HomePage() {
 
-  const [password, setPassword] = useState('');
+  const [searchValue, setSearchValue] = useState('');
 
-  const customRequirements = [
-    {
-      label: 'Minimum 12 characters',
-      validator: (value:string) => value.length >= 12
-    },
-    {
-      label: 'Contains your name',
-      validator: (value:string) => value.toLowerCase().includes('john')
-    }
-  ];
+  const suggestions = [
+    { text: 'Popular search 1', type: 'trending' },
+    { text: 'Suggestion 1', type: 'suggestion' },
+    { text: 'Suggestion 2', type: 'suggestion' },
+  ] as any;
+
+  const handleSearch = (searchValue: string) => {
+    console.log('Search value:', searchValue);
+  };
+
+  
 
   return (
     <div className='size-full p-6'>
@@ -31,15 +33,15 @@ export default function HomePage() {
       </Button>
       
 
-      <PasswordInput
-        label="Password"
-        value={password}
-        onChange={setPassword}
-        showPasswordStrength
-        showRequirements
-        customRequirements={customRequirements} // Optional
-        helperText="Enter your password"
-        required
+      <SearchInput
+        label="Search"
+        value={searchValue}
+        onChange={setSearchValue}
+        onSearch={handleSearch}
+        suggestions={suggestions}
+        showSearchHistory
+        instantSearch
+        helperText="Search for anything"
       />
     </div>
   );
