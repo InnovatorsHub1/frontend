@@ -1,10 +1,17 @@
-import { lazy } from 'react';
+import { lazy, ComponentType } from 'react';
 import TestErrorPage from './components/ErrorBoundary/TestErrorPage';
 
 const HomePage = lazy(() => import('./pages/Home'));
 const ReduxExamplePage = lazy(() => import('./pages/ReduxExample'));
 
-export const routes = [
+export type IRoutesModel<T = any> = {
+  to: string;
+  text: string;
+  activeNames: string[];
+  Component: ComponentType<T>;
+};
+
+export const routes: IRoutesModel[] = [
   {
     to: '/',
     text: 'Home',
@@ -20,6 +27,8 @@ export const routes = [
   // just for testing the error boundary
   {
     to: '/test-error',
+    text: 'Error',
+    activeNames: ['/error'],
     Component: TestErrorPage,
   },
 ];

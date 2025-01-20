@@ -24,3 +24,6 @@ dist-ssr
 
 **/.DS_Store
 *storybook.log
+
+# testing
+coverage
