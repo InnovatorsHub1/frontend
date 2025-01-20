@@ -1,8 +1,7 @@
 import { Button } from '@mui/material';
 import Modal from '@src/components/Modal/Modal';
 import React, { useState } from 'react';
-
-const HomePage: React.FC = () => {
+const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
