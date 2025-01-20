@@ -1,9 +1,8 @@
-import React from 'react';
 import { ModalProps } from './types';
 import CloseIcon from '@mui/icons-material/Close';
 
 const Modal = (props: ModalProps) => {
-const { children, onClose, open .... } = props
+  const { children, onClose, open, size, hideCloseButton, title, footer } = props;
   if (!open) return null;
 
   return (
