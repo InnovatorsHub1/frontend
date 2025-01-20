@@ -15,11 +15,15 @@ interface ButtonProps {
   loading?: boolean;
   disabled?: boolean;
   fullWidth?: boolean;
-
+ 
   //using with props by the way rest parmaters and spread opertaors into style inline 
   padding?: number | string;
   margin?: number | string;
   fontSize?: number | string;
+  
+  //using states
+  backgroundColor?: string 
+  color?: string
   
   // Event handlers
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -59,8 +63,7 @@ export default function GenericButton({
       onClick={onClick}
       // style={{ ...props}}
       type={type}
-      style={{...props}}
-      
+      sx={{...props}}
     >
       {loading ? loading : children}
     </Button>

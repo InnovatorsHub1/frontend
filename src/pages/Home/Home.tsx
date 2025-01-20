@@ -11,13 +11,19 @@ export default function HomePage() {
           
           variant='primary'
           size='sm'
-          icon={<Delete/>}
+          icon={<Delete sx={{ color: 'blue',
+            width: '72px',    // Explicitly set width
+            height: '72px',   // Explicitly set height
+          }}/>}
           iconPosition ='left'
           padding= '24px'
           fontSize= '24px'
           margin={20}
           type='button'
           active={true}
+          backgroundColor='green'
+          color='red'
+          
           >
           Test222
          
