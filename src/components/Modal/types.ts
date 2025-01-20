@@ -7,8 +7,8 @@ export type ModalSizes = {
 export type ModalProps = {
   open: boolean;
   onClose: () => void;
-  title?: string;
   children: React.ReactNode;
+  title?: string;
   footer?: React.ReactNode;
   size?: keyof ModalSizes;
   hideCloseButton?: boolean;
