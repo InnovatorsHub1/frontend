@@ -28,7 +28,6 @@ export default function HomePage() {
           Test222
          
       </GenericButton>
-
       <GenericButton 
           
           variant='primary'
@@ -57,7 +56,8 @@ export default function HomePage() {
           Test222345
          
       </GenericButton>
-        
+       
+       <GenericButton>Test</GenericButton>
        <br/>
       <Button variant='contained'>Contained</Button>
       <Button variant='contained' disabled>

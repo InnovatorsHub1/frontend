@@ -4,8 +4,8 @@ try: sx,focused
 */
 interface ButtonProps {
   // Core props
-  variant: 'primary' | 'secondary' | 'outlined' | 'text' | 'link';
-  size: 'sm' | 'md' | 'lg';
+  variant?: 'primary' | 'secondary' | 'outlined' | 'text' | 'link';
+  size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
   active?: boolean|string;
 
@@ -38,7 +38,7 @@ export default function GenericButton({
   size,
   children,
   icon,
-  iconPosition,
+  iconPosition="left",
   loading,
   disabled,
   fullWidth,
@@ -50,7 +50,6 @@ export default function GenericButton({
   // Map custom props to MUI-compatible props
   const muiVariant = variant === 'outlined' || variant === 'text' ? variant : 'contained';
   const muiSize = size === 'sm' ? 'small' : size === 'lg' ? 'large' : 'medium';
-  // const sizeIcon = size === 'sm' ? 'small' : size === 'lg' ? 'large' : 'medium';
   console.log('children:', children);
   return (
     <Button
@@ -61,7 +60,7 @@ export default function GenericButton({
       disabled={disabled || loading}
       fullWidth={fullWidth}
       onClick={onClick}
-      // style={{ ...props}}
+
       type={type}
       sx={{...props}}
     >
