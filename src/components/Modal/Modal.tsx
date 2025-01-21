@@ -1,13 +1,29 @@
 import { ModalProps } from './types';
 import CloseIcon from '@mui/icons-material/Close';
+import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 const Modal = (props: ModalProps) => {
   const { children, onClose, open, size, hideCloseButton, title, footer } = props;
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   if (!open) return null;
 
-  const modalContent = (
-    <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50' onClick={onClose}>
+  return ReactDOM.createPortal(
+    <div
+      className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
       <div className={`relative bg-white p-4 rounded-md shadow-lg modal-size-${size}`}>
         {!hideCloseButton && (
           <button
@@ -22,10 +38,9 @@ const Modal = (props: ModalProps) => {
         <div className='mb-4'>{children}</div>
         {footer && <div>{footer}</div>}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
-  // Render modal in a portal
-  return ReactDOM.createPortal(modalContent, document.body);
 };
 
 export default Modal;
