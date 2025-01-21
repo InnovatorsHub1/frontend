@@ -20,6 +20,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   envDir: rootDir,
+  envPrefix: 'VITE_',
+  keepProcessEnv: true,
   clearScreen: false, // <--- default is true. false prevents Vite from clearing the terminal screen when logging certain messages
   logLevel: 'info', // <--- default is info. Options are: info, warn, error, silent
   // envPrefix: 'VITE_', // <--- default is VITE_

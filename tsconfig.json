@@ -40,7 +40,7 @@
       "@src/*": ["src/*"]
     },
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
-    // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
+    "types": ["jest", "@testing-library/jest-dom", "node"],
     // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
     // "moduleSuffixes": [],                             /* List of file name suffixes to search when resolving a module. */
     // "allowImportingTsExtensions": true,               /* Allow imports to include TypeScript file extensions. Requires '--moduleResolution bundler' and either '--noEmit' or '--emitDeclarationOnly' to be set. */
@@ -127,5 +127,5 @@
   },
   "compileOnSave": true,
   "exclude": ["node_modules", "**/node_modules/*", "<node_internals>/**", "bin/**"],
-  "include": ["src"]
+  "include": ["src", "__test__/**/*"]
 }
