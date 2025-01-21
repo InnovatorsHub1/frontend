@@ -49,6 +49,7 @@ export default function GenericButton({
 }: ButtonProps) {
   // Map custom props to MUI-compatible props
   const muiVariant = variant === 'outlined' || variant === 'text' ? variant : 'contained';
+  //if we using with mui we can use in props with fullname and will not need this logic
   const muiSize = size === 'sm' ? 'small' : size === 'lg' ? 'large' : 'medium';
   console.log('children:', children);
   return (

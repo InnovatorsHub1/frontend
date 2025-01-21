@@ -58,6 +58,7 @@ export default function HomePage() {
       </GenericButton>
        
        <GenericButton>Test</GenericButton>
+       
        <br/>
       <Button variant='contained'>Contained</Button>
       <Button variant='contained' disabled>
