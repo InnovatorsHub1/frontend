@@ -95,7 +95,10 @@ Tasks:
 Interactive States
 
 - [X] Hover effects  - already happening using sx props and styling
-- [X] Active states  - do we need logic?
+- [X] Active states  - 
+/*
+    for active we can create active object/Type which should hold props like color, isActive, bgColor, Font.. etc..
+*/
 - [X] Focus styles - built in
     /*
         import React from 'react';
@@ -140,12 +143,17 @@ Ripple Effect
 
  Storybook Setup
 
-- [ ] Basic stories
-- [ ] Variant showcase
-- [ ] Interactive controls
+- [X] Basic stories
+- [ ] Variant showcase // primary, secondary, disabled, ועוד.
+- [X] Interactive controls //הוספת בקרות אינטראקטיביות מאפשרת למשתמשים לשנות את הפרופסים (props) של הרכיב בזמן אמת ב-Storybook.
 - [ ] Documentation
  Testing Suite
 
+/*
+    we need more info about the test cases and userStory: what is expected to be tested?
+    we already created one test but we need to understand what are the requirement per each test.
+    for unit test we want to be able to create a generic button and insert it into the git so we don't get errors.
+*/
 - [ ] Unit tests
 - [ ] Integration tests
 - [ ] Accessibility tests
