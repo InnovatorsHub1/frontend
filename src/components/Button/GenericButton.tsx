@@ -7,7 +7,12 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outlined' | 'text' | 'link';
   size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
-  active?: boolean|string;
+  // active?:{
+  //   color?:string;
+  //   backgroundColor?:string;
+  //   isActive?:boolean;
+  // };
+  isActive?: boolean;
 
   // Optional features
   icon?: React.ReactNode;
@@ -15,16 +20,18 @@ interface ButtonProps {
   loading?: boolean;
   disabled?: boolean;
   fullWidth?: boolean;
- 
-  //using with props by the way rest parmaters and spread opertaors into style inline 
+
+  //using with props by the way rest parmaters and spread opertaors into style inline
   padding?: number | string;
   margin?: number | string;
   fontSize?: number | string;
-  
+
   //using states
-  backgroundColor?: string 
-  color?: string
-  
+  backgroundColor?: string;
+  color?: string;
+  isActiveBackgroundColor?: string;
+  isActiveAcolor?: string;
+
   // Event handlers
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 
@@ -38,12 +45,16 @@ export default function GenericButton({
   size,
   children,
   icon,
-  iconPosition="left",
+  iconPosition = 'left',
   loading,
   disabled,
   fullWidth,
   onClick,
   type = 'button',
+  isActive,
+  isActiveAcolor,
+  isActiveBackgroundColor,
+  // isActive,
   // className,
   ...props
 }: ButtonProps) {
@@ -54,16 +65,16 @@ export default function GenericButton({
   console.log('children:', children);
   return (
     <Button
-      variant={muiVariant}
+      // variant={isActive?"text":muiVariant}
+      variant={isActive ? 'text' : muiVariant}
       size={muiSize}
       startIcon={iconPosition === 'left' && icon ? icon : undefined}
       endIcon={iconPosition === 'right' && icon ? icon : undefined}
       disabled={disabled || loading}
       fullWidth={fullWidth}
       onClick={onClick}
-
       type={type}
-      sx={{...props}}
+      sx={isActive ? { color: isActiveAcolor, backgroundColor: isActiveBackgroundColor } : { ...props }}
     >
       {loading ? loading : children}
     </Button>

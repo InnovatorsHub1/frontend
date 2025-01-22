@@ -20,7 +20,7 @@ export default function HomePage() {
           fontSize= '24px'
           margin={20}
           type='button'
-          active={true}
+          isActive={true}
           backgroundColor='green'
           color='red'
           
