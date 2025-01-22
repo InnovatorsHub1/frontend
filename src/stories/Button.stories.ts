@@ -13,4 +13,16 @@ export default meta;
 
 type Story = StoryObj<StoryProps>;
 
-export const primary: Story = {}
+export const primary: Story = {
+    args:{
+        variant: 'primary',
+        size: 'sm',
+        padding: '24px',
+        fontSize: '24px',
+        margin: 20,
+        type: 'button',
+        active: true,
+        color: 'red',
+        children:"Avinoam"
+    }
+}
