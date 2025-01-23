@@ -1,17 +1,11 @@
 import { Button } from '@mui/material';
-/*TODO: 
-try: sx,focused
-*/
+
 interface ButtonProps {
   // Core props
   variant?: 'primary' | 'secondary' | 'outlined' | 'text' | 'link';
   size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
-  // active?:{
-  //   color?:string;
-  //   backgroundColor?:string;
-  //   isActive?:boolean;
-  // };
+
   isActive?: boolean;
 
   // Optional features
@@ -54,11 +48,9 @@ export default function GenericButton({
   isActiveAcolor = 'red',
   isActiveBackgroundColor = 'pink',
   fullWidth,
-  // isActive,
-  // className,
+  className,
   ...props
 }: ButtonProps) {
-  // Map custom props to MUI-compatible props
   let backgroundColor = props.backgroundColor;
   let color = props.color;
 
@@ -80,12 +72,11 @@ export default function GenericButton({
     color ="pink";
   }
 
-
-
   const muiVariant = variant === 'outlined' || variant === 'text' ? variant : 'contained';
-  //if we using with mui we can use in props with fullname and will not need this logic
+ 
+
   const muiSize = size === 'sm' ? 'small' : size === 'lg' ? 'large' : 'medium';
-  console.log('children:', children);
+
   return (
     <Button
       variant={muiVariant}
@@ -97,7 +88,7 @@ export default function GenericButton({
       onClick={onClick}
       type={type}
       fullWidth={fullWidth}
-      // sx={isActive ? { color: isActiveAcolor, backgroundColor: isActiveBackgroundColor } : { ...props }}
+      className={className}
     >
       {loading ? loading : children}
     </Button>
