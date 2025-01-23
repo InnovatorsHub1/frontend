@@ -52,8 +52,8 @@ export default function GenericButton({
   onClick,
   type = 'button',
   isActive,
-  isActiveAcolor,
-  isActiveBackgroundColor,
+  isActiveAcolor="red",
+  isActiveBackgroundColor="pink",
   // isActive,
   // className,
   ...props

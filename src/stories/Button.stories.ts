@@ -26,3 +26,13 @@ export const primary: Story = {
         children:"text"
     }
 }
+
+
+export const activeButton: Story = {
+    args:{
+        isActive: true,
+        isActiveAcolor: 'red',
+        isActiveBackgroundColor: 'pink',
+        children:"Active Button"
+    }
+}
