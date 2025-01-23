@@ -54,10 +54,10 @@ export default function GenericButton({
   let backgroundColor = props.backgroundColor;
   let color = props.color;
 
-  if (variant === 'primary'&& !props.backgroundColor&& !backgroundColor) {
+  if (variant === 'primary'&& !color&& !backgroundColor) {
     backgroundColor = 'black';
     color = 'skyblue';
-  } else if (variant === 'secondary'&& !props.backgroundColor&& !backgroundColor) {
+  } else if (variant === 'secondary'&& !color&& !backgroundColor) {
     backgroundColor = 'skyblue';
     color = 'black';
   }

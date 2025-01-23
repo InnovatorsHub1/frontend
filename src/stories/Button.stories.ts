@@ -1,7 +1,5 @@
-import { Default } from './../components/Loaders/TopNavLoader/TopNavLoader.stories';
 import GenericButton from '@src/components/Button/GenericButton';
 import { Meta, StoryObj } from '@storybook/react';
-import { Delete } from '@mui/icons-material';
 import { ComponentProps } from 'react';
 
 type StoryProps = ComponentProps<typeof GenericButton>;
