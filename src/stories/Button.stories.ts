@@ -149,3 +149,25 @@ export const color: Story = {
     children: 'color red',
   },
 };
+
+export const typeButton: Story = {
+  args: {
+    type: 'button',
+    children: 'type button',
+  },
+};
+
+export const typeSubmit: Story = {
+  args: {
+    type: 'submit',
+    children: 'type submit',
+  },
+};
+
+export const typeReset: Story = {
+  args: {
+    type: 'reset',
+    children: 'type reset',
+  },
+};
+
