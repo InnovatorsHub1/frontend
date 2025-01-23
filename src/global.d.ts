@@ -14,7 +14,6 @@ interface ImportMetaEnv {
 
 interface ImportMeta {
   url: string;
-  //TODO DELETE THIS COMMENT AND CONQUER THE WORLD
 
   readonly env: ImportMetaEnv;
 }
