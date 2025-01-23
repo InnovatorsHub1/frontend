@@ -109,7 +109,7 @@ export const IconLeft: Story = {
   args: {
     iconPosition: 'left',
     icon: "🚀",
-    children: 'IconLeft',
+    children: 'Icon Left',
   },
 };
 
@@ -117,7 +117,7 @@ export const IconRight: Story = {
   args: {
     iconPosition: 'right',
     icon: "🚀",
-    children: 'IconRight',
+    children: 'Icon Right',
   },
 };
 
