@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import { createStore } from './store';
 import SuspenseUntilReady from './components/SuspenseUntilReady';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 const gradientStyle = `
     font-size: 20px;
@@ -27,7 +28,9 @@ function Client() {
       >
         <StoreProvider store={store}>
           <BrowserRouter>
-            <App />
+            <ErrorBoundary>
+              <App />
+            </ErrorBoundary>
           </BrowserRouter>
         </StoreProvider>
       </SuspenseUntilReady>
