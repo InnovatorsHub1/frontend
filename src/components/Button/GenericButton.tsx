@@ -52,29 +52,39 @@ export default function GenericButton({
   onClick,
   type = 'button',
   isActive,
-  isActiveAcolor="red",
-  isActiveBackgroundColor="pink",
+  isActiveAcolor = 'red',
+  isActiveBackgroundColor = 'pink',
   // isActive,
   // className,
   ...props
 }: ButtonProps) {
   // Map custom props to MUI-compatible props
+  let backgroundColor = props.backgroundColor;
+  let color = props.color;
+
+  if (variant === 'primary') {
+    backgroundColor = 'black';
+    color = 'skyblue';
+  } else if (variant === 'secondary') {
+    backgroundColor = 'skyblue';
+    color = 'black';
+  }
+
   const muiVariant = variant === 'outlined' || variant === 'text' ? variant : 'contained';
   //if we using with mui we can use in props with fullname and will not need this logic
   const muiSize = size === 'sm' ? 'small' : size === 'lg' ? 'large' : 'medium';
   console.log('children:', children);
   return (
     <Button
-      // variant={isActive?"text":muiVariant}
-      variant={isActive ? 'text' : muiVariant}
+      variant={muiVariant}
       size={muiSize}
       startIcon={iconPosition === 'left' && icon ? icon : undefined}
       endIcon={iconPosition === 'right' && icon ? icon : undefined}
       disabled={disabled || loading}
-      fullWidth={fullWidth}
+      sx={isActive ? { color: isActiveAcolor, backgroundColor: isActiveBackgroundColor } : { ...props, backgroundColor, color }}
       onClick={onClick}
       type={type}
-      sx={isActive ? { color: isActiveAcolor, backgroundColor: isActiveBackgroundColor } : { ...props }}
+      // sx={isActive ? { color: isActiveAcolor, backgroundColor: isActiveBackgroundColor } : { ...props }}
     >
       {loading ? loading : children}
     </Button>
