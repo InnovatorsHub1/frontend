@@ -144,9 +144,9 @@ Ripple Effect
  Storybook Setup
 
 - [X] Basic stories
-- [ ] Variant showcase // primary, secondary, disabled, ועוד.
+- [X] Variant showcase // primary, secondary, disabled, ועוד.
 - [X] Interactive controls //הוספת בקרות אינטראקטיביות מאפשרת למשתמשים לשנות את הפרופסים (props) של הרכיב בזמן אמת ב-Storybook.
-- [ ] Documentation
+- [X] Documentation
  Testing Suite
 
 /*

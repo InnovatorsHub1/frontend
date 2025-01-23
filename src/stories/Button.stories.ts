@@ -1,3 +1,4 @@
+import { Default } from './../components/Loaders/TopNavLoader/TopNavLoader.stories';
 import GenericButton from '@src/components/Button/GenericButton';
 import { Meta, StoryObj } from '@storybook/react';
 import { Delete } from '@mui/icons-material';
@@ -13,6 +14,11 @@ export default meta;
 
 type Story = StoryObj<StoryProps>;
 
+export const defaultButton: Story = {
+  args: {
+    children: 'default',
+  },
+};
 export const primary: Story = {
   args: {
     variant: 'primary',
