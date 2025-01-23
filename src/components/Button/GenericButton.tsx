@@ -48,12 +48,12 @@ export default function GenericButton({
   iconPosition = 'left',
   loading,
   disabled,
-  fullWidth,
   onClick,
-  type = 'button',
+  type,
   isActive,
   isActiveAcolor = 'red',
   isActiveBackgroundColor = 'pink',
+  fullWidth,
   // isActive,
   // className,
   ...props
@@ -62,13 +62,25 @@ export default function GenericButton({
   let backgroundColor = props.backgroundColor;
   let color = props.color;
 
-  if (variant === 'primary') {
+  if (variant === 'primary'&& !props.backgroundColor&& !backgroundColor) {
     backgroundColor = 'black';
     color = 'skyblue';
-  } else if (variant === 'secondary') {
+  } else if (variant === 'secondary'&& !props.backgroundColor&& !backgroundColor) {
     backgroundColor = 'skyblue';
     color = 'black';
   }
+
+
+  if(type ==="submit"){
+    backgroundColor = 'greenyellow';
+    color ="green";
+  }
+  else if(type ==="reset"){
+    backgroundColor = "orange";
+    color ="pink";
+  }
+
+
 
   const muiVariant = variant === 'outlined' || variant === 'text' ? variant : 'contained';
   //if we using with mui we can use in props with fullname and will not need this logic
@@ -84,6 +96,7 @@ export default function GenericButton({
       sx={isActive ? { color: isActiveAcolor, backgroundColor: isActiveBackgroundColor } : { ...props, backgroundColor, color }}
       onClick={onClick}
       type={type}
+      fullWidth={fullWidth}
       // sx={isActive ? { color: isActiveAcolor, backgroundColor: isActiveBackgroundColor } : { ...props }}
     >
       {loading ? loading : children}
