@@ -5,12 +5,19 @@ import { ComponentProps } from 'react';
 type StoryProps = ComponentProps<typeof GenericButton>;
 
 const meta: Meta<StoryProps> = {
+  title: 'Stories/GenericButton',
   component: GenericButton,
+  parameters: {
+    layout: 'fullscreen',
+  },
+  tags: ['!autodocs', 'alpha', 'version:1.0.0']
 };
 
 export default meta;
 
 type Story = StoryObj<StoryProps>;
+
+export const Default: Story = {};
 
 export const defaultButton: Story = {
   args: {
@@ -172,6 +179,13 @@ export const typeReset: Story = {
   args: {
     type: 'reset',
     children: 'type reset',
+  },
+};
+
+export const loadingState: Story = {
+  args: {
+    loading: true,
+    children: 'loading',
   },
 };
 
