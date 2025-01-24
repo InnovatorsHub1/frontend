@@ -4,22 +4,23 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "clean": "rm -rf node_modules",
+    "full": "pnpm run test:coverage && pnpm run format-fix && pnpm run format && pnpm run build",
+    "LINT": "------------------- LINT ----------------------",
     "lint": "eslint",
     "lint-fix": "eslint --fix",
     "format": "biome format --verbose ./src",
     "format-fix": "biome format --verbose ./src --write",
     "format-prettier": "prettier . --check --config .prettierrc.mjs --ignore-path .prettierignore",
-
-  
+    "TEST": "------------------- TEST ----------------------",
     "test": "jest --watchAll",
     "test:ci": "jest",
-    "coverage": "jest --coverage",
-
+    "test:coverage": "jest --coverage",
     "typecheck": "tsc -p tsconfig.json",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "STORYBOOK": "-------------- STORYBOOK -----------------",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -41,10 +42,8 @@
 
     "tailwind": "^4.0.0",
     "ts-node": "^10.9.2",
-    
 
     "uuid": "^11.0.5"
-
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.0",
@@ -105,8 +104,6 @@
     "vite": "^6.0.6"
   },
   "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
+    "extends": ["plugin:storybook/recommended"]
   }
 }

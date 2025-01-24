@@ -1,4 +1,4 @@
-import GenericButton from '@src/components/Button/GenericButton';
+import GenericButton from './GenericButton';
 import { Meta, StoryObj } from '@storybook/react';
 import { ComponentProps } from 'react';
 
@@ -10,7 +10,7 @@ const meta: Meta<StoryProps> = {
   parameters: {
     layout: 'fullscreen',
   },
-  tags: ['!autodocs', 'alpha', 'version:1.0.0']
+  tags: ['!autodocs', 'alpha', 'version:1.0.0'],
 };
 
 export default meta;
@@ -113,7 +113,7 @@ export const fullWidth: Story = {
 export const IconLeft: Story = {
   args: {
     iconPosition: 'left',
-    icon: "🚀",
+    icon: '🚀',
     children: 'IconLeft',
   },
 };
@@ -121,7 +121,7 @@ export const IconLeft: Story = {
 export const IconRight: Story = {
   args: {
     iconPosition: 'right',
-    icon: "🚀",
+    icon: '🚀',
     children: 'IconRight',
   },
 };
@@ -188,4 +188,3 @@ export const loadingState: Story = {
     children: 'loading',
   },
 };
-

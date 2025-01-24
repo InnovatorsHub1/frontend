@@ -7,59 +7,57 @@ export default function HomePage() {
       <div>Main</div>
       <div>window</div>
 
-      <GenericButton 
-          
-          variant='primary'
-          size='sm'
-          icon={<Delete sx={{ color: 'blue',
-            width: '72px',    // Explicitly set width
-            height: '72px',   // Explicitly set height
-          }}/>}
-          iconPosition ='left'
-          padding= '24px'
-          fontSize= '24px'
-          margin={20}
-          type='button'
-          isActive={true}
-          backgroundColor='green'
-          color='red'
-          
-          >
-          Test222
-         
+      <GenericButton
+        variant='primary'
+        size='sm'
+        icon={
+          <Delete
+            sx={{
+              color: 'blue',
+              width: '72px', // Explicitly set width
+              height: '72px', // Explicitly set height
+            }}
+          />
+        }
+        iconPosition='left'
+        padding='24px'
+        fontSize='24px'
+        margin={20}
+        type='button'
+        isActive={true}
+        backgroundColor='green'
+        color='red'
+      >
+        Test222
       </GenericButton>
-      <GenericButton 
-          
-          variant='primary'
-          size='sm'
-          icon={<Delete/>}
-          iconPosition ='left'
-          padding= '24px'
-          fontSize= '24px'
-          margin={20}
-          type='button'
-          >
-          Test123
-         
+      <GenericButton
+        variant='primary'
+        size='sm'
+        icon={<Delete />}
+        iconPosition='left'
+        padding='24px'
+        fontSize='24px'
+        margin={20}
+        type='button'
+      >
+        Test123
       </GenericButton>
-      <GenericButton 
-          
-          variant='primary'
-          size='sm'
-          icon={<Delete/>}
-          iconPosition ='left'
-          padding= '24px'
-          fontSize= '24px'
-          margin={20}
-          type='button'
-          >
-          Test222345
-         
+      <GenericButton
+        variant='primary'
+        size='sm'
+        icon={<Delete />}
+        iconPosition='left'
+        padding='24px'
+        fontSize='24px'
+        margin={20}
+        type='button'
+      >
+        Test222345
       </GenericButton>
-       
-       <GenericButton>Test</GenericButton>
-       
-       <br/>
+
+      <GenericButton>Test</GenericButton>
+
+      <br />
       <Button variant='contained'>Contained</Button>
       <Button variant='contained' disabled>
         Disabled
