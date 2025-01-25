@@ -52,4 +52,16 @@
     ],
     "description": "Setup Jest test for Example component with mocked Axios",
   },
+  "Component TS Template": {
+    "prefix": "cts",
+    "body": [
+      "export type IToastNotificationModel = {};",
+      "",
+      "export default function ToastNotification(props: IToastNotificationModel) {",
+      "  const {} = props;",
+      "  return <div>ToastNotification</div>;",
+      "}",
+    ],
+    "description": "Simple template for a ToastNotification component in TypeScript",
+  },
 }
