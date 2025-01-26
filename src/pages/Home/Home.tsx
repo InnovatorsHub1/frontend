@@ -1,6 +1,7 @@
 import { Button } from '@mui/material';
 import GenericButton from '@src/components/Button/GenericButton';
 import { Delete } from '@mui/icons-material';
+import ExampleTable from '@src/components/Table/ExmpaleTable';
 export default function HomePage() {
   return (
     <div className='size-full p-6'>
@@ -59,6 +60,8 @@ export default function HomePage() {
        
        <GenericButton>Test</GenericButton>
        
+
+       <ExampleTable/>
        <br/>
       <Button variant='contained'>Contained</Button>
       <Button variant='contained' disabled>

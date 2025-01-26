@@ -10,14 +10,13 @@ const meta: Meta<StoryProps> = {
   parameters: {
     layout: 'fullscreen',
   },
-  tags: ['!autodocs', 'alpha', 'version:1.0.0']
+  // tags: ['!autodocs', 'alpha', 'version:1.0.0']
 };
 
 export default meta;
 
 type Story = StoryObj<StoryProps>;
 
-export const Default: Story = {};
 
 export const defaultButton: Story = {
   args: {
