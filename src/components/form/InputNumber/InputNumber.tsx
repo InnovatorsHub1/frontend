@@ -1,7 +1,6 @@
-import { FC } from 'react';
 import { FieldErrors, FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
 
-type IInputNumberPropsModel = {
+type IInputNumberProps = {
   label: string;
   formRegisterName: string;
   defaultValue?: number;
@@ -10,7 +9,7 @@ type IInputNumberPropsModel = {
   validation: RegisterOptions<any, string> | undefined;
 };
 
-const InputNumber: FC<IInputNumberPropsModel> = (props: IInputNumberPropsModel) => {
+export default function InputNumber(props: IInputNumberProps) {
   const { label, formRegisterName, defaultValue, register, errors, validation } = props;
   const errorMessage = errors[formRegisterName]?.message as string;
   return (
@@ -26,6 +25,4 @@ const InputNumber: FC<IInputNumberPropsModel> = (props: IInputNumberPropsModel) 
       {errors[formRegisterName] && <small className='text-red-500 text-xs italic px-1'>{errorMessage}</small>}
     </div>
   );
-};
-
-export default InputNumber;
+}
