@@ -30,7 +30,6 @@ export const Select: React.FC<SelectProps> = ({
 }) => {
   const isMultiple = multiple && Array.isArray(value);
 
-  // הוספת אופציית Select All לרשימה
   const enhancedOptions = multiple && !maxSelected 
     ? [{ label: "Select All", value: "select_all" }, ...options] 
     : options;
@@ -58,7 +57,6 @@ export const Select: React.FC<SelectProps> = ({
         if (multiple) {
           const selectedValues = (newValue as SelectOption[]).map((option) => option.value);
 
-          // טיפול באופציית Select All
           if (selectedValues.includes("select_all")) {
             const allValues = options.map((option) => option.value);
             onChange(allValues);
