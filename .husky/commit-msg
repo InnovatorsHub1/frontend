@@ -2,7 +2,7 @@
 
 echo ""
 echo "[34m--------------------[39m"
-echo "[34mStep 1: npm run lint[39m"
+echo "[34mStep 1: pnpm run lint[39m"
 echo "[34m--------------------[39m"
 
 start_time=$(date +%s)
@@ -23,10 +23,10 @@ echo "[32mChecked all files in $elapsed_time seconds[39m"
 
 echo ""
 echo "[34m----------------------[39m"
-echo "[34mStep 2: npm run format[39m"
+echo "[34mStep 2: pnpm run format[39m"
 echo "[34m----------------------[39m"
 
-npm run format
+pnpm run format
 
 echo ""
 echo "[32m√[39m Formatter check passed 100%"
