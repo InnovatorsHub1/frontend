@@ -1,5 +1,5 @@
-import React from "react";
-import { Autocomplete, TextField, Chip } from "@mui/material";
+import React, { useEffect } from "react";
+import { Autocomplete, TextField } from "@mui/material";
 
 interface SelectOption {
   label: string;
@@ -18,21 +18,28 @@ interface SelectProps {
   renderOption?: (option: SelectOption) => React.ReactNode;
 }
 
-export const Select: React.FC<SelectProps> = ({
-  options,
-  value,
-  onChange,
-  multiple = false,
-  groupBy,
-  searchable = false,
-  maxSelected,
-  renderOption,
-}) => {
+export default function Select(props: SelectProps) {
+  const {
+    options,
+    value,
+    onChange,
+    multiple = false,
+    groupBy,
+    searchable = false,
+    maxSelected,
+    renderOption,
+  } = props;
+
   const isMultiple = multiple && Array.isArray(value);
 
-  const enhancedOptions = multiple && !maxSelected 
-    ? [{ label: "Select All", value: "select_all" }, ...options] 
-    : options;
+  const enhancedOptions =
+    multiple && !maxSelected
+      ? [{ label: "Select All", value: "select_all" }, ...options]
+      : options;
+
+  useEffect(() => {
+    console.log("Value:", value);
+  }, [value]);
 
   return (
     <Autocomplete
@@ -44,14 +51,11 @@ export const Select: React.FC<SelectProps> = ({
           ? options.filter((option) => (value as string[]).includes(option.value))
           : options.find((option) => option.value === value) || null
       }
-      renderOption={(props, option) => {
-        const { key, ...restProps } = props;
-        return (
-          <li key={key} {...restProps}>
-            {option.label}
-          </li>
-        );
-      }}
+      inputValue={
+        !multiple && !searchable
+          ? options.find((option) => option.value === value)?.label || ""
+          : undefined
+      }
       filterSelectedOptions={multiple}
       onChange={(event, newValue) => {
         if (multiple) {
@@ -71,17 +75,13 @@ export const Select: React.FC<SelectProps> = ({
         }
       }}
       renderInput={(params) => (
-        <TextField
-          {...params}
-          label="Select an option"
-          placeholder={searchable ? "Search..." : undefined}
-        />
+        <TextField {...params} label="Select an option" placeholder={searchable ? "Search..." : ""} />
       )}
       disableCloseOnSelect={multiple}
       clearOnEscape
-      disableClearable={!searchable}
-      freeSolo={!searchable}
-      inputValue={searchable ? undefined : ""}
+      disableClearable={false}
+      freeSolo={false} 
     />
   );
-};
+}
+
