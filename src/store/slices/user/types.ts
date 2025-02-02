@@ -45,3 +45,11 @@ export interface UserState {
   isLoading: boolean;
   data: any;
 }
+
+export type SSOConfig = {
+  authEndpoint: string;
+  clientId: string;
+  redirectUri: string;
+  scope: string;
+  // ... other SSO specific config
+};

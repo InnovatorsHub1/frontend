@@ -17,7 +17,6 @@ const userSlice = createSlice({
       state.data = user;
     },
     showLoginSpinner: (state) => {
-      // debugger;
       state.isLoading = true;
     },
     hideLoginSpinner: (state) => {
