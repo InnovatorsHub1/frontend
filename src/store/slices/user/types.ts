@@ -27,6 +27,19 @@ export type SamlLogin = {
   };
 };
 
+export type OAuthLogin = {
+  loginType: LoginTypes.oauth;
+  params: {
+    authEndpoint: string;
+    clientId: string;
+    redirectUri: string;
+    scope: string;
+    state: string;
+    responseType?: string;
+    extraParams?: Record<string, string>;
+  };
+};
+
 export interface UserState {
   isLogged: boolean;
   isLoading: boolean;

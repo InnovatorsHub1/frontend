@@ -29,3 +29,8 @@ declare module '*.scss' {
   const content: Record<string, string>;
   export default content;
 }
+
+declare global {
+  const TextEncoder: typeof import('util').TextEncoder;
+  const TextDecoder: typeof import('util').TextDecoder;
+}

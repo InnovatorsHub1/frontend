@@ -1,13 +1,7 @@
 import React from 'react';
+import { OAuthLogin } from '../../../store/slices/user/types';
 
-export type SSOLoginProps = {
-    authEndpoint: string;
-    clientId: string;
-    redirectUri: string;
-    scope: string;
-    state: string;
-    responseType?: string;
-    extraParams?: Record<string, string>;
+export type SSOLoginProps = OAuthLogin['params'] & {
     buttonText?: string;
     children?: React.ReactNode;
 }

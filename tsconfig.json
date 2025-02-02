@@ -127,5 +127,9 @@
   },
   "compileOnSave": true,
   "exclude": ["node_modules", "**/node_modules/*", "<node_internals>/**", "bin/**"],
+<<<<<<< HEAD
   "include": ["src", "__test__/**/*"]
+=======
+  "include": ["src", "jest.config.js"]
+>>>>>>> 557de602dcf86f1253a903bb5e1a4624865d0cc0
 }
