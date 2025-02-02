@@ -1,6 +1,8 @@
 import { Button } from '@mui/material';
-import { Select } from "../../components/form/Select/Select";
+import Select from '../../components/form/Select';
 import { useEffect, useState } from 'react';
+import SingleSelect from '../../components/form/Select';
+import Form from '@src/components/form/Form';
 
 export default function HomePage() {
 
@@ -40,28 +42,9 @@ export default function HomePage() {
 
       {/* TODO: Remove in the end  ----------------------------------------------*/}
       <div style={{ marginTop: "50px" }}>
-        Single Selection <br/><br/>
-        <Select
-          options={options}
-          value={selectedSingle}
-          onChange={setSelectedSingle}
-          //searchable={true}
-          groupBy={(option) => option.group || ""}
-        />
+       <Form/>
       </div>
 
-      {/* <div style={{ marginTop: "50px" }}>
-        Multiple Selection <br/><br/>
-        <Select
-          options={options}
-          value={selectedMultiple}
-          onChange={setSelectedMultiple}
-          multiple
-          searchable={true}
-          //groupBy={(option) => option.group || ""}
-          //maxSelected={3}
-        />
-      </div> */}
 
 
       {/* ------------------------------------------------------------------------------ */}
