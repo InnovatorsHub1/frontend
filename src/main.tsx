@@ -7,6 +7,7 @@ import './index.css';
 import { createStore } from './store';
 import SuspenseUntilReady from './components/SuspenseUntilReady';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import DarkThemeProvider from './providers/DarkThemeProvider';
 
 const gradientStyle = `
     font-size: 20px;
@@ -29,7 +30,9 @@ function Client() {
         <StoreProvider store={store}>
           <BrowserRouter>
             <ErrorBoundary>
-              <App />
+              <DarkThemeProvider>
+                <App />
+              </DarkThemeProvider>
             </ErrorBoundary>
           </BrowserRouter>
         </StoreProvider>
