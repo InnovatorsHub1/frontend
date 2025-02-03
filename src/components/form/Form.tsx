@@ -11,44 +11,44 @@ const options = [
 ];
 
 export default function Form() {
-    const [selected1, setSelected1] = useState<SelectOption | SelectOption[] | null>([]);
+  const [data, setData] = useState<{
+    fname?: string;
+    lname?: string;
+    selected?: SelectOption[];
+  }>({});
 
-    
-    const [selected2, setSelected2] = useState<SelectOption | SelectOption[] | null>(null);
-  
-    useEffect(() => {
-      console.log('Selected1', selected1);
-    }, [selected1]);
-  
-    useEffect(() => {
-      console.log('Selected2', selected2);
-    }, [selected2]);
-  
-    const handleChange = (selectId: number) => (newValue: SelectOption | SelectOption[] | null) => {
-      if (selectId === 1) {
-        setSelected1(newValue);
-      } else if (selectId === 2) {
-        setSelected2(newValue);
-      }
-    };
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement> | SelectOption | SelectOption[] | null) => {
+    if (event === null) {
+      setData((prev) => ({ ...prev, selected: [] }));
+    } else if (Array.isArray(event)) {
+      setData((prev) => ({ ...prev, selected: event }));
+    } else if ('target' in event) {
+      const { name, value, checked, type } = event.target;
+      setData((prev) => ({
+        ...prev,
+        [name]: type === 'checkbox' ? checked : value,
+      }));
+    } else {
+      setData((prev) => ({ ...prev, selected: [event] }));
+    }
+  };
+
   return (
-    <div>
+    <form>
+      <input type='text' name='fname' id='fname' placeholder='First Name' onChange={handleChange} />
+      <input type='text' name='lname' id='lname' placeholder='Last Name' onChange={handleChange} />
       <Select
         options={options}
-        onChange={handleChange(1)}
-        value={selected1}
+        onChange={handleChange}
+        value={data.selected || []}
         groupBy={(option) => option.group || ''}
         multiple
+        name='selected'
       />
-
-
-      <Select
-        options={options}
-        onChange={handleChange(2)}
-        value={selected2}
-        groupBy={(option) => option.group || ''}
-        // multiple
-      />
-    </div>
+    </form>
   );
 }
