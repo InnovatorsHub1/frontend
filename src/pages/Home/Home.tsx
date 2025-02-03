@@ -30,41 +30,8 @@ export default function HomePage() {
       >
         Test222
       </GenericButton>
-      <GenericButton
-        variant='primary'
-        size='sm'
-        icon={<Delete />}
-        iconPosition='left'
-        padding='24px'
-        fontSize='24px'
-        margin={20}
-        type='button'
-      >
-        Test123
-      </GenericButton>
-      <GenericButton
-        variant='primary'
-        size='sm'
-        icon={<Delete />}
-        iconPosition='left'
-        padding='24px'
-        fontSize='24px'
-        margin={20}
-        type='button'
-      >
-        Test222345
-      </GenericButton>
 
-      <GenericButton>Test</GenericButton>
-
-      <br />
-      <Button variant='contained'>Contained</Button>
-      <Button variant='contained' disabled>
-        Disabled
-      </Button>
-      <Button variant='contained' href='#contained-buttons'>
-        Link
-      </Button>
+      <div className='bg-error dark:bg-dark-primary'>error</div>
     </div>
   );
 }
