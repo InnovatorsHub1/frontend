@@ -1,15 +1,6 @@
-import { Button } from '@mui/material';
-import Modal from '@src/components/Modal/Modal';
-import { useState } from 'react';
-
 import GenericButton from '@src/components/Button/GenericButton';
 import { Delete } from '@mui/icons-material';
 export default function HomePage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-
   return (
     <div className='size-full p-6'>
       <div>Main</div>
