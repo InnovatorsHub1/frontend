@@ -47,7 +47,6 @@ export default function Form() {
         value={data.selected || []}
         groupBy={(option) => option.group || ''}
         multiple
-        name='selected'
       />
     </form>
   );

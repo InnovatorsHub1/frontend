@@ -3,6 +3,7 @@ import Select from '../../components/form/Select';
 import { useEffect, useState } from 'react';
 import SingleSelect from '../../components/form/Select';
 import Form from '@src/components/form/Form';
+import Form2 from '@src/components/form/Form2';
 
 export default function HomePage() {
 
@@ -43,6 +44,7 @@ export default function HomePage() {
       {/* TODO: Remove in the end  ----------------------------------------------*/}
       <div style={{ marginTop: "50px" }}>
        <Form/>
+       <Form2/>
       </div>
 
 
