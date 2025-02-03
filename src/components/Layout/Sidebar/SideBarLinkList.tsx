@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { routes as routesRaw } from '@src/routes';
 import SideBarLinkItem from './SideBarLinkItem';
+import DarkModeToggle from '@src/components/DarkModeToggle';
 
 export default function SideBarLinkList() {
   const { pathname } = useLocation();
@@ -21,6 +22,8 @@ export default function SideBarLinkList() {
       {routes.map(({ to, text, isActive }) => (
         <SideBarLinkItem key={text} to={to} text={text} isActive={isActive} />
       ))}
+
+      <DarkModeToggle size={20} />
     </div>
   );
 }
