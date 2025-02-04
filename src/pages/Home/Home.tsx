@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
-import Select from '../../components/form/Select';
+import GenericButton from '@src/components/Button/GenericButton';
+import { Delete } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
-import SingleSelect from '../../components/form/Select';
 import Form from '@src/components/form/Form';
 import Form2 from '@src/components/form/Form2';
 
@@ -33,6 +33,58 @@ export default function HomePage() {
     <div className='size-full p-6'>
       <div>Main</div>
       <div>window</div>
+
+      <GenericButton
+        variant='primary'
+        size='sm'
+        icon={
+          <Delete
+            sx={{
+              color: 'blue',
+              width: '72px', // Explicitly set width
+              height: '72px', // Explicitly set height
+            }}
+          />
+        }
+        iconPosition='left'
+        padding='24px'
+        fontSize='24px'
+        margin={20}
+        type='button'
+        isActive={true}
+        backgroundColor='green'
+        color='red'
+      >
+        Test222
+      </GenericButton>
+      <GenericButton
+        variant='primary'
+        size='sm'
+        icon={<Delete />}
+        iconPosition='left'
+        padding='24px'
+        fontSize='24px'
+        margin={20}
+        type='button'
+      >
+        Test123
+      </GenericButton>
+      <GenericButton
+        variant='primary'
+        size='sm'
+        icon={<Delete />}
+        iconPosition='left'
+        padding='24px'
+        fontSize='24px'
+        margin={20}
+        type='button'
+      >
+        Test222345
+      </GenericButton>
+
+      <GenericButton>Test</GenericButton>
+
+      <br />
       <Button variant='contained'>Contained</Button>
       <Button variant='contained' disabled>
         Disabled
