@@ -7,6 +7,7 @@ import './index.css';
 import { createStore } from './store';
 import SuspenseUntilReady from './components/SuspenseUntilReady';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import { ToastContainer } from 'react-toastify';
 
 const gradientStyle = `
     font-size: 20px;
@@ -33,6 +34,7 @@ function Client() {
             </ErrorBoundary>
           </BrowserRouter>
         </StoreProvider>
+        <ToastContainer />
       </SuspenseUntilReady>
     </StrictMode>
   );
