@@ -64,4 +64,9 @@
     ],
     "description": "Simple template for a ToastNotification component in TypeScript",
   },
+  "Index TS Snippets": {
+    "prefix": "exde",
+    "body": ["export { default } from './${1}';"],
+    "description": "Export default from index.ts file",
+  },
 }
