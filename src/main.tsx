@@ -8,6 +8,7 @@ import { createStore } from './store';
 import SuspenseUntilReady from './components/SuspenseUntilReady';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import { ToastContainer } from 'react-toastify';
+import ToastProvider from './components/ToastNotifications/ToastProvider';
 
 const gradientStyle = `
     font-size: 20px;
@@ -30,7 +31,16 @@ function Client() {
         <StoreProvider store={store}>
           <BrowserRouter>
             <ErrorBoundary>
-              <App />
+              <ToastProvider
+                maxToasts={5}
+                defaultDuration={5000}
+                defaultPosition='top-right'
+                defaultType='info'
+                pauseOnHover
+                closeOnClick
+              >
+                <App />
+              </ToastProvider>
             </ErrorBoundary>
           </BrowserRouter>
         </StoreProvider>
