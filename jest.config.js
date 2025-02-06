@@ -9,5 +9,5 @@ export default {
         '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
         '\\.(css|less|scss|sass)$': 'jest-transform-stub',
     },
-    setupFilesAfterEnv: ['./jest.setup.ts'],
+    setupFilesAfterEnv: ['./jest.setup.ts', './src/setupTests'],
 }
