@@ -2,14 +2,14 @@ import clsx from 'clsx';
 import styles from './Link.module.scss';
 import { Link as ReactLink } from 'react-router-dom';
 
-export type ILinkProps = {
+export type LinkProps = {
   children: React.ReactNode;
   type: 'primary' | 'secondary' | 'default';
   className?: string;
   to?: string;
 };
 
-export default function Link(props: ILinkProps) {
+export default function Link(props: LinkProps) {
   const { className, children, to = '', type } = props;
   const linkClass = clsx(
     {
