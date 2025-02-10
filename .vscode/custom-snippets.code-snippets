@@ -55,13 +55,13 @@
   "Component TS Template": {
     "prefix": "cts",
     "body": [
-      "export type IToastNotificationModel = {};",
+      "export type I${1:Component}Props = {};",
       "",
-      "export default function ToastNotification(props: IToastNotificationModel) {",
+      "export default function ${1:Component}(props: I${1:Component}Props) {",
       "  const {} = props;",
-      "  return <div>ToastNotification</div>;",
+      "  return <div>${1:Component}</div>;",
       "}",
     ],
-    "description": "Simple template for a ToastNotification component in TypeScript",
+    "description": "Simple template for a ${1:Component} component in TypeScript",
   },
 }

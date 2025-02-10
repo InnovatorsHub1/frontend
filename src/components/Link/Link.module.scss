@@ -1,0 +1,10 @@
+.linkWrapper {
+    display: inline-block;
+    a {
+        transition: 500ms ease-in-out;
+        &:hover {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+    }
+}
