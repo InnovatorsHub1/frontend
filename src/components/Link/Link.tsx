@@ -1,20 +1,15 @@
 import clsx from 'clsx';
-import { Link as ReactLink} from 'react-router-dom';
+import { Link as ReactLink } from 'react-router-dom';
 
 export type LinkProps = {
   children: React.ReactNode;
   type?: 'primary' | 'secondary' | 'default';
   className?: string;
-  to?:string;
-} 
+  to?: string;
+};
 
-export default function Link({ 
-  className, 
-  children, 
-  to = '', 
-  type = 'default',
-  ...rest 
-}: LinkProps) {
+export default function Link(props: LinkProps) {
+  const { className, children, to = '', type = 'default' } = props;
   const linkClass = clsx(
     {
       'text-primary dark:dark-text-primary': type === 'primary',
@@ -25,7 +20,7 @@ export default function Link({
   );
 
   return (
-    <ReactLink to={to} className={linkClass} {...rest}>
+    <ReactLink to={to} className={linkClass}>
       {children}
     </ReactLink>
   );
