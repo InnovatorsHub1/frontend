@@ -1,7 +1,6 @@
-name: CI/CD Pipeline
+name: Pipeline
 
 permissions:
-  id-token: write
   contents: read
 
 on:
@@ -11,16 +10,20 @@ on:
     branches: [main]
 
 jobs:
-  test-build-deploy:
+  test-storybook-build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+          cache: 'pnpm'
 
       - name: Install Dependencies
         run: |
@@ -30,15 +33,14 @@ jobs:
       - name: Run Tests
         run: pnpm test:ci
 
+      - name: Build Storybook
+        run: pnpm build-storybook
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook-static
+
       - name: Build React App
         run: pnpm build
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Deploy to S3
-        run: |
-          aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
