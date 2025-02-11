@@ -9,17 +9,21 @@ describe('Link Component', () => {
     render(
       <BrowserRouter>
         <div>
-          <Link type="primary">PRIMARY_TEST</Link>
-          <Link type="secondary">SECONDARY_TEST</Link>
-          <Link type="default">DEFAULT_TEST</Link>
-          <Link type="primary" to="/redux">PATH_TEST</Link>
-          <Link type="primary" className="custom-class">CLASS_TEST</Link>
-          <Link type="primary">
-            <span data-testid="child">Child Content</span>
+          <Link type='primary'>PRIMARY_TEST</Link>
+          <Link type='secondary'>SECONDARY_TEST</Link>
+          <Link type='default'>DEFAULT_TEST</Link>
+          <Link type='primary' to='/redux'>
+            PATH_TEST
+          </Link>
+          <Link type='primary' className='custom-class'>
+            CLASS_TEST
+          </Link>
+          <Link type='primary'>
+            <span data-testid='child'>Child Content</span>
           </Link>
           <Link>DEFAULT_PROPS_TEST</Link>
         </div>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
   });
 
