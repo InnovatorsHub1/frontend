@@ -7,12 +7,13 @@ export default function HomePage() {
     {
       name : 'color',
       value : 'green',
-      txtColor : 'red'
+      txtColor : 'red',
+      bgColor: 'grey',
     },
     {
       name : 'color',
       value : 'blue',
-      txtColor : 'green'
+      txtColor : 'green',
     },
     {
       name : 'color',
@@ -28,7 +29,7 @@ export default function HomePage() {
       <div>window</div>
 
         COLOR:
-       <RadioGroup options={options} />
+       <RadioGroup btnOptions={options} txtSize='lg' margin='m-5' padding='p-6' innerPadding='p-6'/>
 
 
       {/* <GenericButton

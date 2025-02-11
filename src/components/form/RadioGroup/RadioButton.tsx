@@ -1,8 +1,8 @@
 export type RadioButtonProps = {
     value: string
     name: string  
-    type?: "primary" | "secondery" | "default"
     txtColor?: string
+    bgColor?: string
 }
 
 export default function RadioButton( props: RadioButtonProps ) {
