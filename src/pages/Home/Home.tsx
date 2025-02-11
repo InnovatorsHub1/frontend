@@ -1,10 +1,14 @@
 import GenericButton from '@src/components/Button/GenericButton';
 import { Delete } from '@mui/icons-material';
+import DatePicker from '@src/components/form/DatePicker';
 export default function HomePage() {
   return (
     <div className='size-full p-6'>
       <div>Main</div>
       <div>window</div>
+
+      <DatePicker label='Departure date' className='font-bold text-3xl' />
+      <DatePicker label='Return date' className='font-semibold text-xl' />
 
       <GenericButton
         variant='primary'
