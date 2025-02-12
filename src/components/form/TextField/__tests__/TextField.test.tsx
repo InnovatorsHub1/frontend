@@ -9,7 +9,7 @@ describe('TextField', () => {
       placeholder: 'Enter text',
       type: 'text',
       className: 'custom-class',
-      ...props
+      ...props,
     };
     return render(<TextField {...defaultProps} />);
   };

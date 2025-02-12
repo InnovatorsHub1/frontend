@@ -4,7 +4,7 @@ export default {
     transform: {
         "^.+\\.tsx?$": "ts-jest" // process `*.tsx` files with `ts-jest`
     },
-    moduleNameMapper: {
+    moduleNameMapper: {    
         '^@src/(.*)$': '<rootDir>/src/$1',
         '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
         '\\.(css|less|scss|sass)$': 'jest-transform-stub',
