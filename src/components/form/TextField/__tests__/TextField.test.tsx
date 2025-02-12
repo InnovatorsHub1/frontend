@@ -67,8 +67,6 @@ describe('TextField', () => {
     });
   });
 
-
-
   describe('behavior', () => {
     it('updates value on change', () => {
       setup();
