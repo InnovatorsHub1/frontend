@@ -29,7 +29,8 @@ export default function HomePage() {
       <div>window</div>
 
         COLOR:
-       <RadioGroup btnOptions={options} txtSize='lg' margin='m-5' padding='p-6' innerPadding='p-6'/>
+       
+       <RadioGroup btnOptions={options} txtColor='text-blue-200' bgColor='bg-black' txtSize='text-lg' margin='m-5' padding='p-6' innerPadding='p-6'/>
 
 
       {/* <GenericButton

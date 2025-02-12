@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { userEvent, within, expect } from '@storybook/test';
 import { RadioGroup } from './RadioGroup';
-import { RadioButtonProps } from './RadioGroup';
+import { RadioButtonProps } from './RadioButton';
 
 type StoryProps = ComponentProps<typeof RadioGroup>;
 
@@ -65,7 +65,7 @@ export const Default: Story = {
         bgColor: 'blue',
       },
     ],
-    txtSize: 'base\n',
+    txtSize: 'text-base',
     margin: 'm-4',
     padding: 'p-4',
     innerPadding: 'p-2',
@@ -75,14 +75,15 @@ export const Default: Story = {
 export const SmallSize: Story = {
   args: {
     btnOptions: defaultOptions,
-    txtSize: 'sm',
+    txtSize: 'text-sm',
+    margin: 'm-4\n',
   },
 };
 
 export const LargeSize: Story = {
   args: {
     btnOptions: defaultOptions,
-    txtSize: '4xl',
+    txtSize: 'text-7xl',
     margin: 'm-4',
   },
 };
