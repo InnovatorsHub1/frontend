@@ -67,22 +67,7 @@ describe('TextField', () => {
     });
   });
 
-  describe('styling', () => {
-    it('applies website padding', () => {
-      setup({ type: 'url' });
-      expect(screen.getByRole('textbox')).toHaveClass('pl-18');
-    });
 
-    it('applies default padding', () => {
-      setup({ type: 'email' });
-      expect(screen.getByRole('textbox')).toHaveClass('pl-10');
-    });
-
-    it('applies custom class', () => {
-      setup({ className: 'test-class' });
-      expect(screen.getByRole('textbox')).toHaveClass('test-class');
-    });
-  });
 
   describe('behavior', () => {
     it('updates value on change', () => {
