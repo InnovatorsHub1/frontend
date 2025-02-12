@@ -2,13 +2,26 @@ import GenericButton from '@src/components/Button/GenericButton';
 import { Delete } from '@mui/icons-material';
 import DatePicker from '@src/components/form/DatePicker';
 export default function HomePage() {
+
   return (
     <div className='size-full p-6'>
       <div>Main</div>
       <div>window</div>
-
-      <DatePicker label='Departure date' className='font-bold text-3xl' />
-      <DatePicker label='Return date' className='font-semibold text-xl' />
+    
+  <DatePicker 
+  label='Departure date' 
+  variant='primary'
+  // value is default date displayed === actual date.
+  // replace value with the state variable to control component
+  value={new Date()} 
+  // replace log with the setState function to control component
+  onChange={(newValue) => console.log(newValue?.toDateString())}
+/> 
+<DatePicker 
+variant='secondary'
+value={new Date()} 
+onChange={(newValue) => console.log(newValue?.toDateString())}
+/>
 
       <GenericButton
         variant='primary'
