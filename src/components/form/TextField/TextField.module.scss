@@ -1,6 +1,16 @@
-.container{
-    color: red;
-    .container-fluid{
-        color: blue;
-    }
+.container{ 
+    display: flex;
+    flex-direction: column;
+    left: '34px';
+    top: '61px';
+    width: '298px';
+    height: '60px'; 
 }
+
+.input{ 
+    width: '298px';
+     height: '35px'; 
+     top: '25px'; 
+     border-radius: '4px'; 
+     border-width: '1px'; 
+    }
