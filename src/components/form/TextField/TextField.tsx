@@ -101,7 +101,7 @@ function TextField(propsInput: TextFieldProps) {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          <HelpOutline className='absolute right-2 top-1/2 transform -translate-y-1/2' title={getHelpText()} />
+          <HelpOutline className='absolute right-2 top-1/2 transform -translate-y-1/2' titleAccess={getHelpText()} />
         </div>
       )}
       {!isValid && isTouched && <span className='text-red-500 text-sm mt-1'>{getHelpText()}</span>}
