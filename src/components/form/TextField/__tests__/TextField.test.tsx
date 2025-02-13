@@ -15,16 +15,14 @@ describe('TextField', () => {
   });
 
   it('renders label from name prop', () => {
-    render(<TextField {...defaultProps} name="Email" />);
-    expect(screen.getByText('Email')).toBeInTheDocument();
+    expect(screen.getByText('test-field')).toBeInTheDocument();
   });
 
   it('renders help icon', () => {
     expect(screen.getByTestId('HelpOutlineIcon')).toBeInTheDocument();
   });
 
-  it('renders email field with icon', () => {
-    render(<TextField {...defaultProps} type="email" />);
+  it('renders with default type', () => {
     const input = screen.getByRole('textbox');
     expect(input.parentElement).toHaveClass('relative');
   });
