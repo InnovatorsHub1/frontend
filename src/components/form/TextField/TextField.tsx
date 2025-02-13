@@ -10,7 +10,7 @@ export type TextFieldProps = {
 
 function TextField(propsInput: TextFieldProps) {
   const [inputValue, setInputValue] = useState<string>('');
-  const { className, ...props } = propsInput;
+  const { className, placeholder, name="", type="" } = propsInput;
 
   const icons = [
     { icon: <EmailOutlined />, name: 'email', type: 'email' },
@@ -32,14 +32,15 @@ function TextField(propsInput: TextFieldProps) {
   }
 
   const websiteIput =
-    icons.find((icon) => icon.name === props.name?.toLowerCase())?.name === 'website' ||
-    icons.find((icon) => icon.type === props.type?.toLowerCase())?.type === 'url';
+    icons.find((icon) => icon?.name === name?.toLowerCase())?.name === 'website' ||
+    icons.find((icon) => icon?.type === type?.toLowerCase())?.type === 'url';
   return (
     <div className='flex flex-col bg-black' style={{ left: '34px', top: '61px', width: '298px', height: '60px' }}>
-      <label className='pl-2 text-white'>{props.name || props.type}</label>
-      {props.name === 'description' || props.type === 'textarea' ? (
+      <label className='pl-2 text-white'>{name || type}</label>
+      {name === 'description' || type === 'textarea' ? (
         <textarea
-          {...props}
+          placeholder={placeholder}
+          name={name}
           style={{ width: '298px', height: '130px', top: '25px', borderRadius: '4px' }}
           className={`${websiteIput ? 'pl-18' : 'pl-10'} pr-10 border-2 border-black rounded-md ${className}`}
           value={inputValue}
@@ -54,8 +55,10 @@ function TextField(propsInput: TextFieldProps) {
               icons.find((icon) => icon.name === props.name?.toLowerCase())?.icon}
           </span>
           <input
-            {...props}
-            className={` ${statusField(inputValue)} ${icons.find((icon) => icon.name === props.name?.toLowerCase())?.name === 'website' ? 'pl-18' : 'pl-10'} pr-10 border-2 border-black rounded-md ${className}`}
+            name={name}
+            type={type}
+            placeholder={placeholder}
+            className={` ${statusField(inputValue)} ${icons.find((icon) => icon.name === name?.toLowerCase())?.name === 'website' ? 'pl-18' : 'pl-10'} pr-10 border-2 border-black rounded-md ${className}`}
             style={{ width: '298px', height: '35px', top: '25px', borderRadius: '4px' }}
             value={inputValue}
             onChange={(e) => {
