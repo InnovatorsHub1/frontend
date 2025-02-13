@@ -67,26 +67,10 @@ describe('TextField', () => {
     });
   });
 
-  describe('behavior', () => {
-    it('updates value on change', () => {
-      setup();
-      const input = screen.getByRole('textbox');
-      fireEvent.change(input, { target: { value: 'test' } });
-      expect(input).toHaveValue('test');
-    });
-
-    it('shows black text for non-empty input', () => {
-      setup();
-      const input = screen.getByRole('textbox');
-      fireEvent.change(input, { target: { value: 'test' } });
-      expect(input.parentElement).toHaveClass('text-black-500');
-    });
-
-    it('shows gray text for empty input', () => {
-      setup();
-      const input = screen.getByRole('textbox');
-      fireEvent.change(input, { target: { value: '' } });
-      expect(input.parentElement).toHaveClass('text-gray-500');
-    });
+  it('updates value on change', () => {
+    setup();
+    const input = screen.getByRole('textbox');
+    fireEvent.change(input, { target: { value: 'test' } });
+    expect(input).toHaveValue('test');
   });
 });

@@ -10,12 +10,6 @@ export type TextFieldProps = {
 
 function TextField(propsInput: TextFieldProps) {
   const [inputValue, setInputValue] = useState<string>('');
-  // const [statusValue, setStatusValue] = useState<string>('');
-  // const statusInput = [
-  //   { status: 'error', color: 'red' },
-  //   { status: 'success', color: 'green' },
-  //   { status: 'withValue', className: 'black' },
-  // ];
   const { className, ...props } = propsInput;
 
   const icons = [

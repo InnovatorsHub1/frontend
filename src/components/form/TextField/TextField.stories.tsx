@@ -8,7 +8,6 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  decorators: [(Story: ComponentType) => <Story />],
   tags: ['new', 'version:1.0.0'],
 } satisfies Meta<typeof TextField>;
 
