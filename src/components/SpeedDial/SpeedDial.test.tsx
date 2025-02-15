@@ -7,6 +7,7 @@ describe('SpeedDial Component', () => {
     render(
       <SpeedDial
         actions={[{ icon: <FileCopyIcon />, name: 'Copy', onClick: () => {} }]}
+        ariaLabel="SpeedDial component"
       />
     );
     expect(screen.getByLabelText('SpeedDial component')).toBeInTheDocument();

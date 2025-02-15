@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import clsx from 'clsx';
+//import clsx from 'clsx';
 import { SpeedDial as MUISpeedDial, SpeedDialProps, SpeedDialIcon, SpeedDialAction } from '@mui/material';
 import styles from './SpeedDial.module.scss';
 
@@ -9,12 +9,17 @@ export interface ISpeedDialAction {
   onClick: () => void;
 }
 
-export interface ISpeedDialProps extends SpeedDialProps {
+export interface ISpeedDialProps extends Omit<SpeedDialProps, 'children'> {
   actions: ISpeedDialAction[];
   className?: string;
 }
 
-export default function SpeedDial({ actions, className, ...props }: ISpeedDialProps) {
+export default function SpeedDial({ 
+  actions, 
+  className,
+  ariaLabel = 'SpeedDial component',
+  ...props 
+}: ISpeedDialProps) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -22,12 +27,12 @@ export default function SpeedDial({ actions, className, ...props }: ISpeedDialPr
   return (
     <div className={styles.speedDial}>
       <MUISpeedDial
-        ariaLabel="SpeedDial component"
+        ariaLabel={ariaLabel}
         icon={<SpeedDialIcon />}
         onClose={handleClose}
         onOpen={handleOpen}
         open={open}
-        className={styleClass}
+        className={className}
         {...props}
       >
         {actions.map((action) => (
