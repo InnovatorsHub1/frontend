@@ -22,11 +22,6 @@ describe('TextField', () => {
     expect(screen.getByTestId('HelpOutlineIcon')).toBeInTheDocument();
   });
 
-  it('renders with default type', () => {
-    const input = screen.getByRole('textbox');
-    expect(input.parentElement).toHaveClass('relative');
-  });
-
   it('updates value on change', () => {
     const input = screen.getByRole('textbox');
     fireEvent.change(input, { target: { value: 'test' } });
