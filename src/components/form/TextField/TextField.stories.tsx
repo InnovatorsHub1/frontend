@@ -24,14 +24,15 @@ export const Default: Story = {
 export const AllSupportedTextField = (): ReactNode => {
   return (
     <div className='flex flex-col gap-4'>
-        <TextField className="bg-white" name='Email' type='email' placeholder={'Entermail@gmail.com'}  />
-        <TextField
-        className="bg-white"
-          id="outlined-multiline-flexible"
-          label="Multiline"
-          multiline
-          rows={4}
-        />
+      <TextField className='bg-white' name='Email' type='email' placeholder='Entermail@gmail.com' />
+      <TextField
+        className='bg-white'
+        id='outlined-multiline-flexible'
+        placeholder='description'
+        label='Multiline'
+        multiline
+        rows={4}
+      />
     </div>
   );
 };

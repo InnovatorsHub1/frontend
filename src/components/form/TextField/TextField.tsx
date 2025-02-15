@@ -15,7 +15,7 @@ export default function TextField(props: ITextFieldProps) {
       <label className='pl-2 text-white'>{name || type}</label>
       <MUITextField
         className={`rounded-md ${className}`}
-        slotProps={{
+        slotProps={!multiline?{
           input: {
             startAdornment: (
               <InputAdornment position='start'>
@@ -28,7 +28,7 @@ export default function TextField(props: ITextFieldProps) {
               </InputAdornment>
             ),
           },
-        }}
+        }:{}}
         helperText={errorMessage}
         error={isError}
         name={name}
