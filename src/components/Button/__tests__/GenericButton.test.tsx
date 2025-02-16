@@ -3,18 +3,14 @@ import '@testing-library/jest-dom';
 import GenericButton from '../GenericButton';
 
 describe('GenericButton Component', () => {
-  let handleClick: jest.Mock;
-
   beforeEach(() => {
     jest.clearAllMocks();
-    handleClick = jest.fn();
     render(
       <>
-        <GenericButton variant='text'>TEST</GenericButton>
+        <GenericButton>TEST</GenericButton>
         <GenericButton variant='primary'>Primary Button</GenericButton>
         <GenericButton disabled>Disabled Button</GenericButton>
-        <GenericButton loading>Loading</GenericButton>
-        <GenericButton onClick={handleClick}>Click Me</GenericButton>
+        <GenericButton loading>uLoading</GenericButton>
       </>,
     );
   });
@@ -23,28 +19,31 @@ describe('GenericButton Component', () => {
     jest.resetAllMocks();
   });
   it('renders the button with correct text', () => {
-    const buttonElement = screen.getByText(/TEST/i);
+    const buttonElement = screen.getByRole('button', { name: /TEST/i });
     expect(buttonElement).toBeInTheDocument();
   });
 
   it('renders primary button correctly', () => {
-    const button = screen.getByText('Primary Button');
-    expect(button).toHaveClass('text-primary');
-    expect(button).toHaveClass('bg-primary');
+    const button = screen.getByRole('button', { name: 'Primary Button' });
+    expect(button).toHaveClass('MuiButton-root');
+    expect(button.closest('button')).toHaveStyle('text-transform: none');
+    expect(button).toHaveClass('MuiButton-contained');
   });
 
   it('renders disabled button correctly', () => {
-    const button = screen.getByText('Disabled Button');
+    const button = screen.getByRole('button', { name: 'Disabled Button' });  
     expect(button).toBeDisabled();
     expect(button).toHaveClass('Mui-disabled');
+    expect(button).toHaveStyle({
+      backgroundColor: 'rgba(72, 143, 102, 0.5)'
+    });
   });
 
   it('renders loading button correctly', () => {
-    const loadingButton = screen.getByText('Loading').closest('button');
-    const progressSpinner = screen.getByRole('progressbar');
-
-    expect(loadingButton).toBeInTheDocument();
+    const button = screen.getByRole('button', { name: /Loading/i });
+    const progressSpinner = screen.getByRole('progressbar'); 
+    expect(button).toBeDisabled();
     expect(progressSpinner).toBeInTheDocument();
-    expect(loadingButton).toContainElement(progressSpinner);
+    expect(button).toContainElement(progressSpinner);
   });
 });

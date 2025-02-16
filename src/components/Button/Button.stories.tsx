@@ -29,8 +29,6 @@ export const AllSupportedButton = (): ReactNode => {
       <GenericButton variant='primary'>Primary</GenericButton>
       <GenericButton variant='secondary'>Secondary</GenericButton>
       <GenericButton variant='outlined'>Outlined</GenericButton>
-      <GenericButton variant='text'>Text</GenericButton>
-      <GenericButton variant='link'>Link</GenericButton>
     </div>
   );
 };
