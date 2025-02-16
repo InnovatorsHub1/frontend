@@ -14,7 +14,6 @@ export default function HomePage() {
         onChange={setStartDate}
       />
       <DatePicker
-        label='Return date'
         variant='secondary'
         value={endDate}
         onChange={setEndDate}

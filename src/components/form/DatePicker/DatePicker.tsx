@@ -4,10 +4,11 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 export interface IDatePickerProps extends Omit<DatePickerProps<Date>, 'renderInput'> {
   label?: string;
   variant?: 'primary' | 'secondary';
+  className?: string;
 }
 
 export default function DatePicker(props: IDatePickerProps) {
-  const { label = 'Pick a date', variant = 'primary' } = props;
+  const { label, variant = 'primary' } = props;
 
   const variants = {
     primary: {
