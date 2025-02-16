@@ -7,7 +7,7 @@ describe('DatePicker Component', () => {
     jest.clearAllMocks();
     render(
       <>
-        <DatePicker label='Value check' value='01/01/2025' />
+        <DatePicker label='Value check' value={new Date('01/01/2025')} />
         <DatePicker label='Select Date' />
         <DatePicker label='Variant check' variant='secondary' />
       </>,
@@ -27,6 +27,8 @@ describe('DatePicker Component', () => {
   });
 
   it('applies variant styles correctly', () => {
-    expect(screen.getByLabelText('Variant check')).toHaveStyle('background-color: #6FCF97');
+    expect(screen.getByLabelText('Variant check')).toHaveStyle({
+      backgroundColor: expect.stringMatching(/(#6FCF97|rgb\(111,\s*207,\s*151\))/i)
+    });
   });
 });
