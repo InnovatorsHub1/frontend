@@ -3,26 +3,31 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
 export interface IDatePickerProps extends Omit<DatePickerProps<Date>, 'renderInput'> {
   label?: string;
-  variant? : string;
+  variant?: 'primary' | 'secondary';
 }
 
-export default function DatePicker({ label = "Pick a date", variant = "primary" , ...props}: IDatePickerProps) {
+export default function DatePicker(props: IDatePickerProps) {
+  const { label = 'Pick a date', variant = 'primary' } = props;
 
-let  labelBg = "#488F66";
-let layoutColor= "#3D3D3D";
-let layoutBg = "#488F66";
-let layoutBorderColor = "#3D3D3D";
-
-if(variant === "secondary") {
-  labelBg = "#6FCF97";
-  layoutColor= "#3D3D3D";
-  layoutBg = "#6FCF97";
-  layoutBorderColor = "#3D3D3D";
- } 
+  const variants = {
+    primary: {
+      labelBg: '#488F66',
+      layoutColor: '#3D3D3D',
+      layoutBg: '#488F66',
+      layoutBorderColor: '#3D3D3D',
+    },
+    secondary: {
+      labelBg: '#6FCF97',
+      layoutColor: '#3D3D3D',
+      layoutBg: '#6FCF97',
+      layoutBorderColor: '#3D3D3D',
+    },
+  };
+  const { labelBg, layoutColor, layoutBg, layoutBorderColor } = variants[variant];
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <div className="p-5">
+      <div className='p-5'>
         <MUIDatePicker
           {...props}
           slotProps={{
@@ -30,30 +35,26 @@ if(variant === "secondary") {
               label,
               sx: {
                 backgroundColor: labelBg,
-                borderRadius: "5px"
-              }
-            },    
+                borderRadius: '5px',
+              },
+            },
             layout: {
-              sx: { 
-              color: layoutColor,
-              border: `5px solid ${layoutBorderColor}`,
-              backgroundColor: layoutBg,
-              }
+              sx: {
+                color: layoutColor,
+                border: `5px solid ${layoutBorderColor}`,
+                backgroundColor: layoutBg,
+              },
             },
             popper: {
               sx: {
                 '&[aria-hidden="true"]': {
-                  ariaHidden: 'false', // prevent inherit on mobile format
+                  ariaHidden: 'false',
                 },
               },
-            }
+            },
           }}
         />
       </div>
     </LocalizationProvider>
   );
 }
-
-
-
-
