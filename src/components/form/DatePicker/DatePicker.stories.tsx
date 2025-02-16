@@ -8,11 +8,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  decorators: [
-    (Story: ComponentType) => (
-        <Story />
-    ),
-  ],
+  decorators: [(Story: ComponentType) => <Story />],
   tags: ['new', 'version:1.0.0'],
 } satisfies Meta<typeof DatePicker>;
 
@@ -33,7 +29,6 @@ export const AllDatePickers = (): ReactNode => {
       <DatePicker variant='secondary' />
       <DatePicker label='Choose a date' />
       <DatePicker label='Choose a date' variant='secondary' />
-
     </div>
   );
 };
