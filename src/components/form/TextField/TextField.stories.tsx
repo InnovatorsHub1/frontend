@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ComponentType, ReactNode } from 'react';
+import {ReactNode } from 'react';
 import TextField from './TextField';
 
 const meta = {
-  title: 'UI/TextField',
+  title: 'UI/Input',
   component: TextField,
   parameters: {
     layout: 'centered',
