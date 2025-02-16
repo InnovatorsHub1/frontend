@@ -3,7 +3,6 @@ export default function HomePage() {
     <div className='size-full p-6'>
       <div>Main</div>
       <div>window</div>
-
     </div>
   );
 }
