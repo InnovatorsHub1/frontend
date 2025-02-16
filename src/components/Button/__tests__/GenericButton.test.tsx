@@ -42,10 +42,9 @@ describe('GenericButton Component', () => {
   it('renders loading button correctly', () => {
     const loadingButton = screen.getByText('Loading').closest('button');
     const progressSpinner = screen.getByRole('progressbar');
-    
+
     expect(loadingButton).toBeInTheDocument();
     expect(progressSpinner).toBeInTheDocument();
     expect(loadingButton).toContainElement(progressSpinner);
-  })
+  });
 });
-
