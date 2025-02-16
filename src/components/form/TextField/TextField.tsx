@@ -8,27 +8,31 @@ export interface ITextFieldProps extends Omit<TextFieldProps, 'className'> {
 }
 
 export default function TextField(props: ITextFieldProps) {
-  const { className, name, type, errorMessage, isError, placeholder,multiline,rows } = props;
+  const { className, name, type, errorMessage, isError, placeholder, multiline, rows } = props;
 
   return (
     <div className={'flex flex-col'}>
       <label className='pl-2 text-white'>{name || type}</label>
       <MUITextField
         className={`rounded-md ${className}`}
-        slotProps={!multiline?{
-          input: {
-            startAdornment: (
-              <InputAdornment position='start'>
-                <EmailOutlined />
-              </InputAdornment>
-            ),
-            endAdornment: (
-              <InputAdornment position='end'>
-                <HelpOutline />
-              </InputAdornment>
-            ),
-          },
-        }:{}}
+        slotProps={
+          !multiline
+            ? {
+                input: {
+                  startAdornment: (
+                    <InputAdornment position='start'>
+                      <EmailOutlined />
+                    </InputAdornment>
+                  ),
+                  endAdornment: (
+                    <InputAdornment position='end'>
+                      <HelpOutline />
+                    </InputAdornment>
+                  ),
+                },
+              }
+            : {}
+        }
         helperText={errorMessage}
         error={isError}
         name={name}

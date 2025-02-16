@@ -7,7 +7,14 @@ export default function HomePage() {
 
       <form className='flex flex-col gap-4 bg-black'>
         <TextField className='bg-white' name='Email' type='email' placeholder='Entermail@gmail.com' />
-        <TextField className='bg-white' id='outlined-multiline-flexible' placeholder='description' label='Multiline' multiline rows={4} />
+        <TextField
+          className='bg-white'
+          id='outlined-multiline-flexible'
+          placeholder='description'
+          label='Multiline'
+          multiline
+          rows={4}
+        />
       </form>
     </div>
   );
