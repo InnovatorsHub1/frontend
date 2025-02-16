@@ -33,6 +33,7 @@ export default function GenericButton(props: ButtonProps) {
     loading,
     isActive = false,
     className,
+    icon
   } = props;
   const buttonClasses = clsx(
     styles.base,
