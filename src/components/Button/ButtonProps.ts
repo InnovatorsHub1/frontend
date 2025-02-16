@@ -1,33 +1,32 @@
-export interface ButtonProps {
-  // Core props
-  variant?: 'primary' | 'secondary' | 'outlined' | 'text' | 'link';
-  size?: 'sm' | 'md' | 'lg';
-  children: React.ReactNode;
+import { ButtonProps as MuiButtonProps } from '@mui/material/Button';
 
-  isActive?: boolean;
+type Variant = 'primary' | 'secondary' | 'outlined' | 'text' | 'link';
+type Size = 'sm' | 'md' | 'lg';
+export interface ButtonProps extends Omit<MuiButtonProps, 'variant' | 'size'>  {
 
-  // Optional features
+  variant?: Variant;
+  size?: Size;
+
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
+  
   loading?: boolean;
-  disabled?: boolean;
-  fullWidth?: boolean;
-
-  //using with props by the way rest parmaters and spread opertaors into style inline
-  padding?: number | string;
-  margin?: number | string;
-  fontSize?: number | string;
-
-  //using states
+  
   backgroundColor?: string;
-  color?: string;
+  customColor?: string;
+
+  isActive?: boolean;
   isActiveBackgroundColor?: string;
   isActiveAcolor?: string;
 
-  // Event handlers
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 
-  // Customization
   className?: string;
-  type?: 'button' | 'submit' | 'reset';
 }
+
+
+
+
+
+
+
+  
