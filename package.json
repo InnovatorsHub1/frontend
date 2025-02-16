@@ -23,7 +23,8 @@
     "STORYBOOK": "-------------- STORYBOOK -----------------",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "chromatic": "npx chromatic --project-token=chpt_70aa4b0bdd2591c"
   },
   "dependencies": {
     "@date-io/date-fns": "^3.2.0",
@@ -97,8 +98,6 @@
     "vite": "^6.0.6"
   },
   "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
+    "extends": ["plugin:storybook/recommended"]
   }
 }
