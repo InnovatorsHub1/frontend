@@ -28,7 +28,7 @@ describe('DatePicker Component', () => {
 
   it('applies variant styles correctly', () => {
     expect(screen.getByLabelText('Variant check')).toHaveStyle({
-      backgroundColor: expect.stringMatching(/(#6FCF97|rgb\(111,\s*207,\s*151\))/i)
+      backgroundColor: expect.stringMatching(/(#6FCF97|rgb\(111,\s*207,\s*151\))/i),
     });
   });
 });
