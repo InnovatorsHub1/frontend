@@ -41,16 +41,21 @@ const VARIANT_STYLES = {
 } as const;
 
 export default function GenericButton(props: ButtonProps) {
-  const {variant = 'primary',size = 'md',children,iconPosition = 'left',loading = false,isActive = false
-    ,className = '', icon,disabled = false,}=props
+  const {
+    variant = 'primary',
+    size = 'md',
+    children,
+    iconPosition = 'left',
+    loading = false,
+    isActive = false,
+    className = '',
+    icon,
+    disabled = false,
+  } = props;
   const muiSize = size === 'sm' ? 'small' : size === 'lg' ? 'large' : 'medium';
   const muiVariant = variant === 'outlined' ? 'outlined' : 'contained';
 
-  const combinedClassName = [
-    className,
-    isActive ? 'active' : '',
-    loading ? 'loading' : '',
-  ].filter(Boolean).join(' ');
+  const combinedClassName = [className, isActive ? 'active' : '', loading ? 'loading' : ''].filter(Boolean).join(' ');
 
   return (
     <MuiButton
@@ -69,9 +74,7 @@ export default function GenericButton(props: ButtonProps) {
         position: 'relative',
         ...VARIANT_STYLES[variant],
         ...(isActive && {
-          backgroundColor: variant === 'outlined' 
-            ? 'rgba(72, 143, 102, 0.1)' 
-            : 'rgba(72, 143, 102, 0.9)',
+          backgroundColor: variant === 'outlined' ? 'rgba(72, 143, 102, 0.1)' : 'rgba(72, 143, 102, 0.9)',
         }),
         '&:hover': {
           boxShadow: 'none',
@@ -83,7 +86,7 @@ export default function GenericButton(props: ButtonProps) {
       {loading && (
         <CircularProgress
           size={20}
-          color="inherit"
+          color='inherit'
           sx={{
             marginRight: children ? '8px' : 0,
             color: variant === 'outlined' ? 'rgb(72, 143, 102)' : 'inherit',
@@ -93,5 +96,4 @@ export default function GenericButton(props: ButtonProps) {
       {children}
     </MuiButton>
   );
-};
-
+}

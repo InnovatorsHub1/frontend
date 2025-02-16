@@ -31,17 +31,17 @@ describe('GenericButton Component', () => {
   });
 
   it('renders disabled button correctly', () => {
-    const button = screen.getByRole('button', { name: 'Disabled Button' });  
+    const button = screen.getByRole('button', { name: 'Disabled Button' });
     expect(button).toBeDisabled();
     expect(button).toHaveClass('Mui-disabled');
     expect(button).toHaveStyle({
-      backgroundColor: 'rgba(72, 143, 102, 0.5)'
+      backgroundColor: 'rgba(72, 143, 102, 0.5)',
     });
   });
 
   it('renders loading button correctly', () => {
     const button = screen.getByRole('button', { name: /Loading/i });
-    const progressSpinner = screen.getByRole('progressbar'); 
+    const progressSpinner = screen.getByRole('progressbar');
     expect(button).toBeDisabled();
     expect(progressSpinner).toBeInTheDocument();
     expect(button).toContainElement(progressSpinner);
