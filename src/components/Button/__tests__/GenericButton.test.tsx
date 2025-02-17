@@ -37,5 +37,4 @@ describe('GenericButton Component', () => {
       backgroundColor: 'rgba(72, 143, 102, 0.5)',
     });
   });
-
 });
