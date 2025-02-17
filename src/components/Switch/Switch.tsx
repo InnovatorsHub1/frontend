@@ -1,5 +1,4 @@
 import { Switch as MUISwitch, SwitchProps } from '@mui/material';
-import { fontGrid } from '@mui/material/styles/cssUtils';
 
 export interface ISwitchProps extends SwitchProps {
   className?: string;
