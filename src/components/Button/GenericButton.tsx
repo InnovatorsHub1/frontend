@@ -1,7 +1,6 @@
 import { Button as MuiButton } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
 import { ButtonProps } from './ButtonProps';
-import { brotliDecompress } from 'zlib';
 
 const VARIANT_STYLES = {
   primary: {
@@ -55,7 +54,7 @@ const VARIANT_STYLES = {
     secondary: {
       backgroundColor: '#3D3D3D',
       color: '#6FCF97',
-      broder:'2px solid #6FCF97',
+      broder: '2px solid #6FCF97',
       '&:hover': {
         backgroundColor: 'rgb(45, 45, 45)',
       },
@@ -77,7 +76,7 @@ const VARIANT_STYLES = {
         color: 'rgba(111, 207, 151, 0.5)',
       },
     },
-  }
+  },
 } as const;
 
 export default function GenericButton(props: ButtonProps) {
