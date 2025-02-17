@@ -5,17 +5,15 @@ import Switch from '../Switch';
 describe('Switch Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    render(
-        <Switch/>
-    );
+    render(<Switch />);
   });
 
   afterEach(() => {
     jest.resetAllMocks();
   });
 
-    it('renders Switch', () => {
-        const switchElement = screen.getByRole('checkbox');
-        expect(switchElement).toBeInTheDocument();
-    });
+  it('renders Switch', () => {
+    const switchElement = screen.getByRole('checkbox');
+    expect(switchElement).toBeInTheDocument();
+  });
 });

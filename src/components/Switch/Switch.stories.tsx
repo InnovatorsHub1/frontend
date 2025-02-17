@@ -8,7 +8,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-   tags: ['new', 'version:1.0.0'],
+  tags: ['new', 'version:1.0.0'],
 } satisfies Meta<typeof Switch>;
 
 export default meta;
@@ -23,7 +23,7 @@ export const Default: Story = {
 export const AllSupportedLink = (): ReactNode => {
   return (
     <div className='flex gap-2'>
-      <Switch/>
+      <Switch />
     </div>
   );
 };

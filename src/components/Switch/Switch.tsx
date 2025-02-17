@@ -1,6 +1,5 @@
 import { Switch as MUISwitch, SwitchProps } from '@mui/material';
 
-
 const styleSwitch = {
   '& .MuiSwitch-switchBase': {
     '&.Mui-checked': {
@@ -10,10 +9,10 @@ const styleSwitch = {
     },
   },
   '& .MuiSwitch-thumb': {
-    width:14,
-    height:14,
-    marginTop:"3px",
-    marginLeft:"3px",
+    width: 14,
+    height: 14,
+    marginTop: '3px',
+    marginLeft: '3px',
     backgroundColor: '#EDF5FF',
   },
 };
