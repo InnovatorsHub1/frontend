@@ -1,8 +1,6 @@
 import { Switch as MUISwitch, SwitchProps } from '@mui/material';
 
-export interface ISwitchProps extends SwitchProps {
-  className?: string;
-}
+
 const styleSwitch = {
   '& .MuiSwitch-switchBase': {
     '&.Mui-checked': {
@@ -19,6 +17,6 @@ const styleSwitch = {
     backgroundColor: '#EDF5FF',
   },
 };
-export default function Switch(props: ISwitchProps) {
+export default function Switch(props: SwitchProps) {
   return <MUISwitch {...props} sx={styleSwitch} />;
 }
