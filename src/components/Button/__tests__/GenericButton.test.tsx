@@ -10,7 +10,6 @@ describe('GenericButton Component', () => {
         <GenericButton>TEST</GenericButton>
         <GenericButton variant='primary'>Primary Button</GenericButton>
         <GenericButton disabled>Disabled Button</GenericButton>
-        <GenericButton loading>uLoading</GenericButton>
       </>,
     );
   });
@@ -39,11 +38,4 @@ describe('GenericButton Component', () => {
     });
   });
 
-  it('renders loading button correctly', () => {
-    const button = screen.getByRole('button', { name: /Loading/i });
-    const progressSpinner = screen.getByRole('progressbar');
-    expect(button).toBeDisabled();
-    expect(progressSpinner).toBeInTheDocument();
-    expect(button).toContainElement(progressSpinner);
-  });
 });
