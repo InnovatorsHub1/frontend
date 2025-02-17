@@ -18,9 +18,6 @@ const styleSwitch = {
     marginLeft:"3px",
     backgroundColor: '#EDF5FF',
   },
-  '& .MuiSwitch-track': {
-
-  },
 };
 export default function Switch(props: ISwitchProps) {
   return <MUISwitch {...props} sx={styleSwitch} />;
