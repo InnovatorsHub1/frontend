@@ -8,14 +8,15 @@ const styleSwitch = {
   '& .MuiSwitch-switchBase': {
     '&.Mui-checked': {
       '& + .MuiSwitch-track': {
-        backgroundColor: '#488F66',
+        backgroundColor: '#6FCF97',
       },
     },
   },
   '& .MuiSwitch-thumb': {
-    width:16,
-    height:16,
-    top:"50%",
+    width:14,
+    height:14,
+    marginTop:"3px",
+    marginLeft:"3px",
     backgroundColor: '#EDF5FF',
   },
   '& .MuiSwitch-track': {
