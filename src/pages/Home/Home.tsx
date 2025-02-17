@@ -5,7 +5,7 @@ export default function HomePage() {
     <div className='size-full p-6 bg-[#212533] '>
       <div>Main</div>
       <div>window</div>
-        <Switch/>
+      <Switch />
     </div>
   );
 }
