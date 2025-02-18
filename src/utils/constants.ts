@@ -11,4 +11,6 @@ const API_URLS = {
   },
 };
 
-export { API_URLS, LS_KEY_SEARCH_PARAMS, LS_KEY_THEME };
+const prefix = "AD"
+
+export { API_URLS, LS_KEY_SEARCH_PARAMS, LS_KEY_THEME, prefix };
