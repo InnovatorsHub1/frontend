@@ -10,7 +10,6 @@ export default function GenericButton(props: ButtonProps) {
     children,
     iconPosition = 'left',
     loading = false,
-    isActive = false,
     className = '',
     icon,
     disabled = false,
@@ -18,7 +17,7 @@ export default function GenericButton(props: ButtonProps) {
   const muiSize = size === 'sm' ? 'small' : size === 'lg' ? 'large' : 'medium';
   const muiVariant = variant === 'outlined' ? 'outlined' : 'contained';
 
-  const combinedClassName = [className, isActive ? 'active' : '', loading ? 'loading' : ''].filter(Boolean).join(' ');
+  const combinedClassName = [className, loading ? 'loading' : ''].filter(Boolean).join(' ');
   const buttonStyles = {
     textTransform: 'none',
     borderRadius: '6px',
@@ -26,9 +25,6 @@ export default function GenericButton(props: ButtonProps) {
     fontWeight: 500,
     position: 'relative',
     ...VARIANT_STYLES[variant],
-    ...(isActive && {
-      backgroundColor: variant === 'outlined' ? 'rgba(72, 143, 102, 0.1)' : 'rgba(72, 143, 102, 0.9)',
-    }),
     '&:hover': {
       boxShadow: 'none',
       ...VARIANT_STYLES[variant]['&:hover'],

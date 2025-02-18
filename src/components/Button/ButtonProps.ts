@@ -6,6 +6,6 @@ export interface ButtonProps extends Omit<MuiButtonProps, 'variant' | 'size'> {
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
   loading?: boolean;
-  isActive?: boolean;
   className?: string;
+  disabled? : boolean;
 }
