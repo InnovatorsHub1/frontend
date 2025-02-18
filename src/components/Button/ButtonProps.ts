@@ -7,5 +7,5 @@ export interface ButtonProps extends Omit<MuiButtonProps, 'variant' | 'size'> {
   iconPosition?: 'left' | 'right';
   loading?: boolean;
   className?: string;
-  disabled? : boolean;
+  disabled?: boolean;
 }
