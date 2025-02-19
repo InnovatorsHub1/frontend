@@ -18,18 +18,7 @@ export default function GenericButton(props: ButtonProps) {
   const muiVariant = variant === 'outlined' ? 'outlined' : 'contained';
 
   const combinedClassName = [className, loading ? 'loading' : ''].filter(Boolean).join(' ');
-  const buttonStyles = {
-    textTransform: 'none',
-    borderRadius: '6px',
-    boxShadow: 'none',
-    fontWeight: 500,
-    position: 'relative',
-    ...VARIANT_STYLES[variant],
-    '&:hover': {
-      boxShadow: 'none',
-      ...VARIANT_STYLES[variant]['&:hover'],
-    },
-  };
+  const buttonStyles = {...VARIANT_STYLES[variant]};
 
   const loadingIndicator = loading && (
     <CircularProgress

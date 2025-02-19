@@ -1,13 +1,13 @@
 import { colorsDefine } from '../../styles/constantsStyle';
 
-const { primary, secondary, accent } = colorsDefine[0]?.colors || {};
-const { primary: rgbaPrimary, secondary: rgbaSecondary, default: rgbaDefault } = colorsDefine[0]?.colors.rgba || {};
-const { primary: disabledPrimary, secondary: disabledSecondary } = colorsDefine[0]?.colors.disabled || {};
+const { primary, secondary, accent } = colorsDefine?.colors || {};
+const { primary: rgbaPrimary, secondary: rgbaSecondary, default: rgbaDefault } = colorsDefine?.colors.rgba || {};
+const { primary: disabledPrimary, secondary: disabledSecondary } = colorsDefine?.colors.disabled || {};
 
 const {primary: darkPrimary,secondary: darkSecondary,background: darkBackground,
-} = colorsDefine[0]?.colors.dark || {};
-const { primary: darkRgbaPrimary } = colorsDefine[0]?.colors.rgba.dark || {};
-const { primary: darkDisabledPrimary, secondary: darkDisabledSecondary } = colorsDefine[0]?.colors.disabled.dark || {};
+} = colorsDefine?.colors.dark || {};
+const { primary: darkRgbaPrimary } = colorsDefine?.colors.rgba.dark || {};
+const { primary: darkDisabledPrimary, secondary: darkDisabledSecondary } = colorsDefine?.colors.disabled.dark || {};
 
 const formatBorder = (color: string | undefined) => `2px solid ${color}`;
 
