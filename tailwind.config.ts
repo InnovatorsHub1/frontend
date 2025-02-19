@@ -330,25 +330,6 @@ const tailwindConfig: Config = {
       colors:{
         ...colorsDefine[0]?.colors,
       },
-      // colors: {
-      //   default: '#2B2B2B',
-      //   background: '#F4EDDE',
-      //   secondary: '#3D3D3D',
-      //   primary: '#488F66',
-      //   accent: '#EDF5FF',
-      //   error: '#EDF5FF',
-      //   success: '#26DF73',
-      //   dark: {
-      //     default: '#ECECEC',
-      //     background: '#11151F',
-      //     secondary: '#3D3D3D',
-      //     primary: '#6FCF97',
-      //     accent: '#EDF5FF',
-      //     error: '#EDF5FF',
-      //     success: '#26DF73',
-      //     card: '#212533',
-      //   },
-      // },
     },
   },
   corePlugins: {

@@ -4,10 +4,7 @@ const { primary, secondary, accent } = colorsDefine[0]?.colors || {};
 const { primary: rgbaPrimary, secondary: rgbaSecondary, default: rgbaDefault } = colorsDefine[0]?.colors.rgba || {};
 const { primary: disabledPrimary, secondary: disabledSecondary } = colorsDefine[0]?.colors.disabled || {};
 
-const {
-  primary: darkPrimary,
-  secondary: darkSecondary,
-  background: darkBackground,
+const {primary: darkPrimary,secondary: darkSecondary,background: darkBackground,
 } = colorsDefine[0]?.colors.dark || {};
 const { primary: darkRgbaPrimary } = colorsDefine[0]?.colors.rgba.dark || {};
 const { primary: darkDisabledPrimary, secondary: darkDisabledSecondary } = colorsDefine[0]?.colors.disabled.dark || {};
@@ -39,16 +36,16 @@ export const VARIANT_STYLES = {
     },
   },
   outlined: {
-    border: '2px solid ' + primary,
+    border: formatBorder(primary),
     backgroundColor: 'transparent',
     color: primary,
     '&:hover': {
       backgroundColor: rgbaPrimary,
-      border: '2px solid ' + primary,
+      border: formatBorder(primary),
       color: accent,
     },
     '&.Mui-disabled': {
-      border: '2px solid ' + disabledPrimary,
+      border: formatBorder(disabledPrimary),
       color: disabledPrimary,
     },
   },
@@ -67,7 +64,7 @@ export const VARIANT_STYLES = {
     secondary: {
       backgroundColor: darkSecondary,
       color: darkPrimary,
-      border: '2px solid ' + darkPrimary,
+      border: formatBorder(darkPrimary),
       '&:hover': {
         backgroundColor: rgbaDefault,
       },
@@ -77,15 +74,15 @@ export const VARIANT_STYLES = {
       },
     },
     outlined: {
-      border: '2px solid ' + darkPrimary,
+      border: formatBorder(darkPrimary),
       backgroundColor: 'transparent',
       color: darkPrimary,
       '&:hover': {
         backgroundColor: darkRgbaPrimary,
-        border: '2px solid ' + darkPrimary,
+        border: formatBorder(darkPrimary),
       },
       '&.Mui-disabled': {
-        border: '2px solid ' + darkDisabledPrimary,
+        border: formatBorder(darkDisabledPrimary),
         color: darkDisabledPrimary,
       },
     },
