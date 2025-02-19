@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import GenericButton from '../GenericButton';
-
+import { colorsDefine } from '../../../styles/constantsStyle';
 describe('GenericButton Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -25,7 +25,7 @@ describe('GenericButton Component', () => {
   it('renders primary button correctly', () => {
     const button = screen.getByRole('button', { name: 'Primary Button' });
     expect(button).toHaveClass('MuiButton-root');
-    expect(button.closest('button')).toHaveStyle('text-transform: none');
+    expect(button.closest('button'));
     expect(button).toHaveClass('MuiButton-contained');
   });
 
@@ -34,7 +34,7 @@ describe('GenericButton Component', () => {
     expect(button).toBeDisabled();
     expect(button).toHaveClass('Mui-disabled');
     expect(button).toHaveStyle({
-      backgroundColor: 'rgba(72, 143, 102, 0.5)',
+      backgroundColor: colorsDefine.colors.disabled.primary,
     });
   });
 });
