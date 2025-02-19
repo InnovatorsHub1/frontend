@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss/types/config';
 import {
-  colorsDefine,screens,spacing,width,minWidth,maxWidth,height,
+  colors,screens,spacing,width,minWidth,maxWidth,height,
   minHeight,maxHeight,borderWidth,borderRadius,boxShadow,saturate,contrast,
   invert,translate,scale,backgroundImage,rotate,animation,keyframes,lineClamp,
 } from './src/styles/constantsStyle';
@@ -14,7 +14,7 @@ const tailwindConfig: Config = {
     extend: {spacing,width,minWidth,maxWidth,height,
       minHeight,maxHeight,borderWidth,borderRadius,boxShadow,
       saturate,contrast,invert,translate,scale,backgroundImage,rotate,
-      animation,keyframes,lineClamp,colors: colorsDefine?.colors,
+      animation,keyframes,lineClamp,colors,
     },
   },
   corePlugins: {

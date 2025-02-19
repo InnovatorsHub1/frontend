@@ -1,7 +1,7 @@
 //This file has been created to bridge sx and tailwind
 
-const colorsDefine = {
-  colors: {
+
+const colors={
     default: '#2B2B2B',
     background: '#F4EDDE',
     secondary: '#3D3D3D',
@@ -110,7 +110,8 @@ const colorsDefine = {
       },
     },
   },
-};
+
+export const {primary, secondary, background, default: defaultColor, accent, error, success, dark} = colors;
 
 const screens = { sm: '480px', md: '768px', lg: '976px', xl: '1440px' };
 
@@ -447,7 +448,7 @@ const lineClamp = {
 };
 
 export {
-  colorsDefine,
+  colors,
   screens,
   spacing,
   width,
