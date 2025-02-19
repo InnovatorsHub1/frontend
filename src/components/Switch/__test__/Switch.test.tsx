@@ -4,12 +4,7 @@ import Switch from '../Switch';
 
 describe('Switch Component', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
     render(<Switch />);
-  });
-
-  afterEach(() => {
-    jest.resetAllMocks();
   });
 
   it('renders Switch', () => {

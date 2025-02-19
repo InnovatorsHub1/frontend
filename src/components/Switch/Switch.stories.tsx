@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Switch from './Switch';
-import { ReactNode } from 'react';
 
 const meta = {
   title: 'UI/Switch',
@@ -18,12 +17,4 @@ export const Default: Story = {
   args: {
     name: 'default',
   },
-};
-
-export const AllSupportedLink = (): ReactNode => {
-  return (
-    <div className='flex gap-2'>
-      <Switch />
-    </div>
-  );
 };
