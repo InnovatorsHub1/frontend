@@ -1,4 +1,7 @@
-export const colorsDefine = {
+//This file has been created to bridge sx and tailwind
+
+
+const colorsDefine = {
   colors: {
     default: '#2B2B2B',
     background: '#F4EDDE',
@@ -58,11 +61,11 @@ export const colorsDefine = {
   },
 };
 
-export const screen = { sm: '480px', md: '768px', lg: '976px', xl: '1440px' };
+const screens = { sm: '480px', md: '768px', lg: '976px', xl: '1440px' };
 
-export const spacing = { 13: '3.25rem', 15: '3.75rem', 18: '4.5rem', 19: '4.75rem', 30: '7.5rem' };
+const spacing = { 13: '3.25rem', 15: '3.75rem', 18: '4.5rem', 19: '4.75rem', 30: '7.5rem' };
 
-export const width = {
+const width = {
   '10/100': '10%',
   '20/100': '20%',
   '30/100': '30%',
@@ -85,7 +88,7 @@ export const width = {
   '6xl': '72rem',
   '7xl': '80rem',
 };
-export const minWidth = {
+const minWidth = {
   1: '0.25rem',
   2: '0.5rem',
   3: '0.75rem',
@@ -124,7 +127,7 @@ export const minWidth = {
   '7xl': '80rem',
 };
 
-export const maxWidth = {
+const maxWidth = {
   thirdish: '32.5%',
   '1/3': '33.33%',
   '2/3': '66.66%',
@@ -176,7 +179,7 @@ export const maxWidth = {
   '7xl': '80rem',
 };
 
-export const height = {
+const height = {
   '80/100': '80%',
   '85/100': '85%',
   '90/100': '90%',
@@ -194,7 +197,7 @@ export const height = {
   '7xl': '80rem',
 };
 
-export const minHeight = {
+const minHeight = {
   1: '0.25rem',
   2: '0.5rem',
   3: '0.75rem',
@@ -229,7 +232,7 @@ export const minHeight = {
   '7xl': '80rem',
 };
 
-export const maxHeight = {
+const maxHeight = {
   '10/100': '10%',
   '20/100': '20%',
   '30/100': '30%',
@@ -257,17 +260,17 @@ export const maxHeight = {
   '7xl': '80rem',
 };
 
-export const borderWidth = {
+const borderWidth = {
   0.5: '0.5px',
   1: '1px',
   1.5: '1.5px',
 };
 
-export const borderRadius = {
+const borderRadius = {
   '4xl': '2rem', // use like so: rounded-4xl
 };
 
-export const boxShadow = {
+const boxShadow = {
   '2xs': '0 0 1px 1px rgba(0, 0, 0, 0.1)',
   xs: '0 0 2px 2px rgba(0, 0, 0, 0.1)',
   sm: '0 0 4px 4px rgba(0, 0, 0, 0.1)',
@@ -281,7 +284,7 @@ export const boxShadow = {
   'dark-lg': '0 0 10px 10px rgba(255,255,255, 0.1)',
 };
 
-export const saturate = {
+const saturate = {
   10: '.1',
   20: '.2',
   30: '.3',
@@ -296,7 +299,7 @@ export const saturate = {
   140: '1.4',
 };
 
-export const contrast = {
+const contrast = {
   10: '.1',
   20: '.2',
   30: '.3',
@@ -307,7 +310,7 @@ export const contrast = {
   90: '.9',
 };
 
-export const invert = {
+const invert = {
   10: '.1',
   20: '.2',
   30: '.3',
@@ -319,25 +322,25 @@ export const invert = {
   90: '.9',
 };
 
-export const translate = {
+const translate = {
   10: '10%',
   half: '-50%',
 };
 
-export const scale = {
+const scale = {
   80: '0.8',
 };
 
-export const backgroundImage = {
+const backgroundImage = {
   'gradient-radial': 'radial-gradient(circle,var(--tw-gradient-stops))',
   'gradient-radial-bottom': 'radial-gradient(circle at bottom,var(--tw-gradient-stops))',
 };
 
-export const rotate = {
+const rotate = {
   270: '270deg',
 };
 
-export const animation = {
+const animation = {
   'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
   'slide-down': 'slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
   'appear-quick': 'appear 150ms normal ease forwards',
@@ -347,7 +350,7 @@ export const animation = {
   appear: 'appear 1000ms normal ease forwards',
 };
 
-export const keyframes = {
+const keyframes = {
   slideUp: {
     from: { opacity: '0', transform: 'translateY(10px)' },
     to: { opacity: '1', transform: 'translateY(0)' },
@@ -386,8 +389,12 @@ export const keyframes = {
   },
 };
 
-export const lineClamp = {
+const lineClamp = {
   // line clamp's default stops at 6 lines! but you can add even more:
   10: '10',
   12: '12',
 };
+
+
+
+export { colorsDefine, screens, spacing, width, minWidth, maxWidth, height, minHeight, maxHeight, borderWidth, borderRadius, boxShadow, saturate, contrast, invert, translate, scale, backgroundImage, rotate, animation, keyframes, lineClamp };

@@ -1,89 +1,75 @@
-import { colorsDefine } from '../../styles/constantsStyle';
-
-const { primary, secondary, accent } = colorsDefine?.colors || {};
-const { primary: rgbaPrimary, secondary: rgbaSecondary, default: rgbaDefault } = colorsDefine?.colors.rgba || {};
-const { primary: disabledPrimary, secondary: disabledSecondary } = colorsDefine?.colors.disabled || {};
-
-const {primary: darkPrimary,secondary: darkSecondary,background: darkBackground,
-} = colorsDefine?.colors.dark || {};
-const { primary: darkRgbaPrimary } = colorsDefine?.colors.rgba.dark || {};
-const { primary: darkDisabledPrimary, secondary: darkDisabledSecondary } = colorsDefine?.colors.disabled.dark || {};
-
-const formatBorder = (color: string | undefined) => `2px solid ${color}`;
-
 export const VARIANT_STYLES = {
   primary: {
-    backgroundColor: primary,
-    color: accent,
+    backgroundColor: 'rgb(72, 143, 102)',
+    color: '#fff',
     '&:hover': {
-      backgroundColor: rgbaPrimary,
+      backgroundColor: 'rgb(58, 114, 82)',
     },
     '&.Mui-disabled': {
-      backgroundColor: disabledPrimary,
-      color: accent,
+      backgroundColor: 'rgba(72, 143, 102, 0.5)',
+      color: '#fff',
     },
   },
   secondary: {
-    backgroundColor: secondary,
-    color: primary,
-    border: formatBorder(primary),
+    backgroundColor: 'rgb(61, 61, 61)',
+    color: 'rgb(72, 143, 102)',
+    border: '2px solid rgb(72, 143, 102)',
     '&:hover': {
-      backgroundColor: rgbaSecondary,
+      backgroundColor: 'rgb(45, 45, 45)',
     },
     '&.Mui-disabled': {
-      backgroundColor: disabledSecondary,
-      color: primary,
+      backgroundColor: 'rgba(61, 61, 61, 0.5)',
+      color: 'rgb(72, 143, 102)',
     },
   },
   outlined: {
-    border: formatBorder(primary),
+    border: '2px solid rgb(72, 143, 102)',
     backgroundColor: 'transparent',
-    color: primary,
+    color: 'rgb(72, 143, 102)',
     '&:hover': {
-      backgroundColor: rgbaPrimary,
-      border: formatBorder(primary),
-      color: accent,
+      backgroundColor: 'rgba(72, 143, 102, 0.05)',
+      border: '2px solid rgb(72, 143, 102)',
     },
     '&.Mui-disabled': {
-      border: formatBorder(disabledPrimary),
-      color: disabledPrimary,
+      border: '2px solid rgba(72, 143, 102, 0.5)',
+      color: 'rgba(72, 143, 102, 0.5)',
     },
   },
   dark: {
     primary: {
-      backgroundColor: darkPrimary,
-      color: darkBackground,
+      backgroundColor: 'rgb(111, 207, 151)',
+      color: '#11151F',
       '&:hover': {
-        backgroundColor: darkRgbaPrimary,
+        backgroundColor: 'rgba(111, 207, 151, 0.8)',
       },
       '&.Mui-disabled': {
-        backgroundColor: darkDisabledPrimary,
-        color: darkBackground,
+        backgroundColor: 'rgba(111, 207, 151, 0.5)',
+        color: '#11151F',
       },
     },
     secondary: {
-      backgroundColor: darkSecondary,
-      color: darkPrimary,
-      border: formatBorder(darkPrimary),
+      backgroundColor: '#3D3D3D',
+      color: '#6FCF97',
+      broder: '2px solid #6FCF97',
       '&:hover': {
-        backgroundColor: rgbaDefault,
+        backgroundColor: 'rgb(45, 45, 45)',
       },
       '&.Mui-disabled': {
-        backgroundColor: darkDisabledSecondary,
-        color: darkPrimary,
+        backgroundColor: 'rgba(61, 61, 61, 0.5)',
+        color: 'rgba(111, 207, 151, 0.5)',
       },
     },
     outlined: {
-      border: formatBorder(darkPrimary),
+      border: '2px solid #6FCF97',
       backgroundColor: 'transparent',
-      color: darkPrimary,
+      color: '#6FCF97',
       '&:hover': {
-        backgroundColor: darkRgbaPrimary,
-        border: formatBorder(darkPrimary),
+        backgroundColor: 'rgba(111, 207, 151, 0.05)',
+        border: '2px solid #6FCF97',
       },
       '&.Mui-disabled': {
-        border: formatBorder(darkDisabledPrimary),
-        color: darkDisabledPrimary,
+        border: '2px solid rgba(111, 207, 151, 0.5)',
+        color: 'rgba(111, 207, 151, 0.5)',
       },
     },
   },
