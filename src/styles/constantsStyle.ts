@@ -1,117 +1,61 @@
 //This file has been created to bridge sx and tailwind
+const createColorVariant = (color:string, opacity:string) => {
+  return color.replace(/[\d.]+\)$/, `${opacity})`);
+};
+const states = {
+  hover: 0.8,
+  pressed: 0.6,
+  disabled: 0.4,
+};
 
-
-const colors={
-    default: '#2B2B2B',
-    background: '#F4EDDE',
-    secondary: '#3D3D3D',
-    primary: '#488F66',
-    accent: '#EDF5FF',
-    error: '#EDF5FF',
-    success: '#26DF73',
-    dark: {
-      default: '#ECECEC',
-      background: '#11151F',
-      secondary: '#3D3D3D',
-      primary: '#6FCF97',
-      accent: '#EDF5FF',
-      error: '#EDF5FF',
-      success: '#26DF73',
-      card: '#212533',
-    },
-
-    rgba: {
-      default: 'rgba(43, 43, 43,1)',
-      background: 'rgba(233, 222, 200, 1)',
-      secondary: 'rgba(61, 61, 61, 1)',
-      primary: 'rgba(72, 143, 102, 1)',
-      accent: 'rgba(237, 245, 255, 1)',
-      forms: 'rgba(61,61,61,0.44)',
-      error: 'rgba(207, 111, 111, 1)',
-      success: 'rgba(38, 223, 115, 1)',
-      card: 'rgba(33, 37, 51, 1)',
-      dark: {
-        default: 'rgba(236, 236, 236, 1)',
-        background: 'rgba(17, 21, 31, 1)',
-        secondary: 'rgba(61, 61, 61, 1)',
-        primary: 'rgba(111, 207, 151, 1)',
-        accent: 'rgba(237, 245, 255, 1)',
-        forms: 'rgba(61,61,61,0.44)',
-        error: 'rgba(207, 111, 111, 1)',
-        success: 'rgba(38, 223, 115, 1)',
-        card: 'rgba(33, 37, 51, 1)',
-      },
-    },
-    hover: {
-      default: 'rgba(43, 43, 43,0.8)',
-      background: 'rgba(233, 222, 200, 0.8)',
-      secondary: 'rgba(61, 61, 61, 0.8)',
-      primary: 'rgba(72, 143, 102, 0.8)',
-      accent: 'rgba(237, 245, 255, 0.8)',
-      forms: 'rgba(61,61,61,0.44)',
-      error: 'rgba(207, 111, 111, 0.8)',
-      success: 'rgba(38, 223, 115, 0.8)',
-      card: 'rgba(33, 37, 51, 0.8)',
-      dark: {
-        default: 'rgba(236, 236, 236, 0.8)',
-        background: 'rgba(17, 21, 31, 0.8)',
-        secondary: 'rgba(61, 61, 61, 0.8)',
-        primary: 'rgba(111, 207, 151, 0.8)',
-        accent: 'rgba(237, 245, 255, 0.8)',
-        forms: 'rgba(61,61,61,0.44)',
-        error: 'rgba(237, 245, 255, 0.8)',
-        success: 'rgba(38, 223, 115, 0.8)',
-        card: 'rgba(33, 37, 51, 0.8)',
-      },
-    },
-    pressed: {
-      default: 'rgba(43, 43, 43,0.6)',
-      background: 'rgba(233, 222, 200, 0.6)',
-      secondary: 'rgba(61, 61, 61, 0.6)',
-      primary: 'rgba(72, 143, 102, 0.6)',
-      accent: 'rgba(237, 245, 255, 0.6)',
-      forms: 'rgba(61,61,61,0.44)',
-      error: 'rgba(207, 111, 111, 0.6)',
-      success: 'rgba(38, 223, 115, 0.6)',
-      card: 'rgba(33, 37, 51, 0.6)',
-      dark: {
-        default: 'rgba(236, 236, 236, 0.6)',
-        background: 'rgba(17, 21, 31, 0.6)',
-        secondary: 'rgba(61, 61, 61, 0.6)',
-        primary: 'rgba(111, 207, 151, 0.6)',
-        accent: 'rgba(237, 245, 255, 0.6)',
-        forms: 'rgba(61,61,61,0.44)',
-        error: 'rgba(237, 245, 255, 0.6)',
-        success: 'rgba(38, 223, 115, 0.6)',
-        card: 'rgba(33, 37, 51, 0.6)',
-      },
-    },
-
-    disabled: {
-      default: 'rgba(43, 43, 43,0.4)',
-      background: 'rgba(233, 222, 200, 0.4)',
-      secondary: 'rgba(61, 61, 61, 0.4)',
-      primary: 'rgba(72, 143, 102, 0.4)',
-      accent: 'rgba(237, 245, 255, 0.4)',
-      forms: 'rgba(61,61,61,0.22)',
-      error: 'rgba(207, 111, 111, 0.4)',
-      success: 'rgba(38, 223, 115, 0.4)',
-      card: 'rgba(33, 37, 51, 0.4)',
-      dark: {
-        default: 'rgba(236, 236, 236, 0.4)',
-        background: 'rgba(17, 21, 31, 0.4)',
-        secondary: 'rgba(61, 61, 61, 0.4)',
-        primary: 'rgba(111, 207, 151, 0.4)',
-        accent: 'rgba(237, 245, 255, 0.4)',
-        forms: 'rgba(61,61,61,0.22)',
-        error: 'rgba(237, 245, 255, 0.4)',
-        success: 'rgba(38, 223, 115, 0.4)',
-        card: 'rgba(33, 37, 51, 0.4)',
-      },
-    },
+const baseColors = {
+  light: {
+    default: 'rgba(43, 43, 43, 1)',
+    background: 'rgba(233, 222, 200, 1)',
+    secondary: 'rgba(61, 61, 61, 1)',
+    primary: 'rgba(72, 143, 102, 1)',
+    accent: 'rgba(237, 245, 255, 1)',
+    forms: 'rgba(61, 61, 61, 0.44)',
+    error: 'rgba(207, 111, 111, 1)',
+    success: 'rgba(38, 223, 115, 1)',
+    card: 'rgba(33, 37, 51, 1)',
   },
+  dark: {
+    default: 'rgba(236, 236, 236, 1)',
+    background: 'rgba(17, 21, 31, 1)',
+    secondary: 'rgba(61, 61, 61, 1)',
+    primary: 'rgba(111, 207, 151, 1)',
+    accent: 'rgba(237, 245, 255, 1)',
+    forms: 'rgba(61, 61, 61, 0.44)',
+    error: 'rgba(207, 111, 111, 1)',
+    success: 'rgba(38, 223, 115, 1)',
+    card: 'rgba(33, 37, 51, 1)',
+  },
+};
+const colors = {
+  ...baseColors.light,
+  dark: baseColors.dark,
+};
 
-export const {primary, secondary, background, default: defaultColor, accent, error, success, dark} = colors;
+Object.entries(states).forEach(([stateName, opacity]) => {
+  colors[stateName] = {
+    ...Object.entries(baseColors.light).reduce(
+      (acc, [key, value]) => ({
+        ...acc,
+        [key]: createColorVariant(value, opacity),
+      }),
+      {},
+    ),
+    dark: Object.entries(baseColors.dark).reduce(
+      (acc, [key, value]) => ({
+        ...acc,
+        [key]: createColorVariant(value, opacity),
+      }),
+      {},
+    ),
+  };
+});
+
 
 const screens = { sm: '480px', md: '768px', lg: '976px', xl: '1440px' };
 

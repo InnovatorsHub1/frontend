@@ -14,7 +14,7 @@ const tailwindConfig: Config = {
     extend: {spacing,width,minWidth,maxWidth,height,
       minHeight,maxHeight,borderWidth,borderRadius,boxShadow,
       saturate,contrast,invert,translate,scale,backgroundImage,rotate,
-      animation,keyframes,lineClamp,colors,
+      animation,keyframes,lineClamp,colors: colors,
     },
   },
   corePlugins: {
