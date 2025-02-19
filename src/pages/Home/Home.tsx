@@ -1,7 +1,11 @@
+import Switch from '@src/components/Switch';
+
 export default function HomePage() {
   return (
-    <div className='size-full p-6'>
-      <div className='bg-error dark:bg-dark-primary'>error</div>
+    <div className='size-full p-6 bg-[#212533] '>
+      <div>Main</div>
+      <div>window</div>
+      <Switch />
     </div>
   );
 }
