@@ -12,12 +12,12 @@ describe('DatePicker Component', () => {
   });
 
   it('renders DatePicker with value', () => {
-    render(<DatePicker label='Value check' value={new Date('01/01/2025')} />)
+    render(<DatePicker label='Value check' value={new Date('01/01/2025')} />);
     expect(screen.getByLabelText('Value check')).toHaveValue('01/01/2025');
   });
 
   it('renders DatePicker with label', () => {
-    render(<DatePicker label='Select Date' />)
+    render(<DatePicker label='Select Date' />);
     expect(screen.getByLabelText('Select Date')).toBeInTheDocument();
   });
 
@@ -25,10 +25,10 @@ describe('DatePicker Component', () => {
     render(
       <form>
         <h2>Hotel Search Engine</h2>
-        <input placeholder="Destination" />
-        <DatePicker label="Departure" value={new Date('01/01/2025')} />
-        <DatePicker label="Return" value={new Date('01/10/2025')} />
-      </form>
+        <input placeholder='Destination' />
+        <DatePicker label='Departure' value={new Date('01/01/2025')} />
+        <DatePicker label='Return' value={new Date('01/10/2025')} />
+      </form>,
     );
 
     const departurePickerElement = screen.getByLabelText('Departure');
