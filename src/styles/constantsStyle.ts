@@ -1,5 +1,3 @@
-//This file has been created to bridge sx and tailwind
-
 const colorsDefine = {
   colors: {
     default: '#2B2B2B',
