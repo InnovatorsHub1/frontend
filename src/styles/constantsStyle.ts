@@ -1,4 +1,3 @@
-
 const colorsDefine = {
   colors: {
     default: '#2B2B2B',

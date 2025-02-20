@@ -18,7 +18,7 @@ export default function DatePicker(props: IDatePickerProps) {
       layoutBorderColor: '#3D3D3D',
     },
     secondary: {
-      labelBg: '#6FCF97',
+      labelBg: '#6FCF96',
       layoutColor: '#3D3D3D',
       layoutBg: '#6FCF97',
       layoutBorderColor: '#3D3D3D',
