@@ -1,61 +1,39 @@
+import { ThemeProvider } from '@mui/material';
 import { DatePicker as MUIDatePicker, DatePickerProps, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
+import { themeColors, getTheme } from './constants';
+
 export interface IDatePickerProps extends Omit<DatePickerProps<Date>, 'renderInput'> {
   label?: string;
-  variant?: 'primary' | 'secondary';
+  variant?: 'light' | 'dark';
   className?: string;
 }
 
 export default function DatePicker(props: IDatePickerProps) {
-  const { label, variant = 'primary' } = props;
+  const { label, variant = 'light' } = props;
 
-  const variants = {
-    primary: {
-      labelBg: '#488F66',
-      layoutColor: '#3D3D3D',
-      layoutBg: '#488F66',
-      layoutBorderColor: '#3D3D3D',
-    },
-    secondary: {
-      labelBg: '#6FCF96',
-      layoutColor: '#3D3D3D',
-      layoutBg: '#6FCF97',
-      layoutBorderColor: '#3D3D3D',
-    },
-  };
-  const { labelBg, layoutColor, layoutBg, layoutBorderColor } = variants[variant];
+  const newTheme = getTheme(variant);
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <div className='p-5'>
+      <ThemeProvider theme={newTheme}>
         <MUIDatePicker
-          {...props}
+          label={label}
           slotProps={{
-            textField: {
-              label,
+            leftArrowIcon: {
               sx: {
-                backgroundColor: labelBg,
-                borderRadius: '5px',
+                color: themeColors[variant].leftArrowColor,
               },
             },
-            layout: {
+            rightArrowIcon: {
               sx: {
-                color: layoutColor,
-                border: `5px solid ${layoutBorderColor}`,
-                backgroundColor: layoutBg,
-              },
-            },
-            popper: {
-              sx: {
-                '&[aria-hidden="true"]': {
-                  ariaHidden: 'false',
-                },
+                color: themeColors[variant].rightArrowColor,
               },
             },
           }}
         />
-      </div>
+      </ThemeProvider>
     </LocalizationProvider>
   );
 }
