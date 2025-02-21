@@ -12,10 +12,9 @@ type BaseColorsProps = {
   card: string;
 };
 
-type ColorProp = {
-  [key: string]: string | ColorProp;
-} & Record<'dark', BaseColorsProps> &
-  Record<IStateKeys, BaseColorsProps> &
+type ColorProps = {
+  [key: string]: string | ColorProps | BaseColorsProps;
+} & Record<'dark'|IStateKeys, BaseColorsProps> &
   BaseColorsProps;
 
 type StatesType = {
@@ -61,17 +60,17 @@ const createColorVariant = (color: string, opacity: number) => {
   return color.replace(/[\d.]+\)$/, `${opacity})`);
 };
 
-const themeGenerate = (baseColors: BaseColorsProps, opacity: number): ColorProp => {
+const themeGenerate = (baseColors: BaseColorsProps, opacity: number): ColorProps => {
   return Object.entries(baseColors).reduce(
     (acc, [key, value]) => ({
       ...acc,
       [key]: createColorVariant(value, opacity),
     }),
-    {} as ColorProp,
+    {} as ColorProps,
   );
 };
 
-const colors: ColorProp = {
+const colors: ColorProps = {
   ...baseColors.light,
   dark: baseColors.dark,
 };
