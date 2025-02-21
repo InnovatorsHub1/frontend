@@ -14,7 +14,7 @@ type BaseColorsProps = {
 
 type ColorProps = {
   [key: string]: string | ColorProps | BaseColorsProps;
-} & Record<'dark'|IStateKeys, BaseColorsProps> &
+} & Record<'dark' | IStateKeys, BaseColorsProps> &
   BaseColorsProps;
 
 type StatesType = {
@@ -31,7 +31,7 @@ const states: StatesType = {
   disabled: 0.4,
 };
 
-const baseColors = {
+const baseColors: Record<'light' | 'dark', BaseColorsProps> = {
   light: {
     default: 'rgba(43, 43, 43, 1)',
     background: 'rgba(233, 222, 200, 1)',
@@ -70,6 +70,8 @@ const themeGenerate = (baseColors: BaseColorsProps, opacity: number): ColorProps
   );
 };
 
+// @ts-ignore
+// TODO - will fix it with Mor Bargig
 const colors: ColorProps = {
   ...baseColors.light,
   dark: baseColors.dark,
