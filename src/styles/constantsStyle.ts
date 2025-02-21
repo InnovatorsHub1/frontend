@@ -1,8 +1,32 @@
-//This file has been created to bridge sx and tailwind
-const createColorVariant = (color:string, opacity:string) => {
-  return color.replace(/[\d.]+\)$/, `${opacity})`);
+//This file has been created to bridge sx and tailwind
+
+type BaseColorsProps = {
+  default: string;
+  background: string;
+  secondary: string;
+  primary: string;
+  accent: string;
+  forms: string;
+  error: string;
+  success: string;
+  card: string;
 };
-const states = {
+
+type ColorProp = {
+  [key: string]: string | ColorProp;
+} & Record<'dark', BaseColorsProps> &
+  Record<IStateKeys, BaseColorsProps> &
+  BaseColorsProps;
+
+type StatesType = {
+  hover: number;
+  pressed: number;
+  disabled: number;
+};
+
+type IStateKeys = keyof StatesType;
+
+const states: StatesType = {
   hover: 0.8,
   pressed: 0.6,
   disabled: 0.4,
@@ -32,30 +56,32 @@ const baseColors = {
     card: 'rgba(33, 37, 51, 1)',
   },
 };
-const colors = {
+
+const createColorVariant = (color: string, opacity: number) => {
+  return color.replace(/[\d.]+\)$/, `${opacity})`);
+};
+
+const themeGenerate = (baseColors: BaseColorsProps, opacity: number): ColorProp => {
+  return Object.entries(baseColors).reduce(
+    (acc, [key, value]) => ({
+      ...acc,
+      [key]: createColorVariant(value, opacity),
+    }),
+    {} as ColorProp,
+  );
+};
+
+const colors: ColorProp = {
   ...baseColors.light,
   dark: baseColors.dark,
 };
 
 Object.entries(states).forEach(([stateName, opacity]) => {
   colors[stateName] = {
-    ...Object.entries(baseColors.light).reduce(
-      (acc, [key, value]) => ({
-        ...acc,
-        [key]: createColorVariant(value, opacity),
-      }),
-      {},
-    ),
-    dark: Object.entries(baseColors.dark).reduce(
-      (acc, [key, value]) => ({
-        ...acc,
-        [key]: createColorVariant(value, opacity),
-      }),
-      {},
-    ),
+    ...themeGenerate(baseColors.light, opacity),
+    dark: themeGenerate(baseColors.dark, opacity),
   };
 });
-
 
 const screens = { sm: '480px', md: '768px', lg: '976px', xl: '1440px' };
 
