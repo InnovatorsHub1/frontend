@@ -35,6 +35,4 @@ export const THEME_STYLES = {
       marginLeft: '8px',
     },
   },
-
-  
 } as const;

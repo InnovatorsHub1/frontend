@@ -7,7 +7,7 @@ export const useTheme = () => {
 
   useEffect(() => {
     const htmlElement = document.documentElement;
-    
+
     setTheme((htmlElement.getAttribute('data-theme') as 'light' | 'dark') || 'light');
 
     const observer = new MutationObserver((mutations) => {
