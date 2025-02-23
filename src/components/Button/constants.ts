@@ -1,76 +1,40 @@
-export const VARIANT_STYLES = {
-  primary: {
-    backgroundColor: 'rgb(72, 143, 102)',
-    color: '#fff',
+import { colors } from '@src/styles/constantsStyle';
+
+export const THEME_STYLES = {
+  light: {
+    backgroundColor: colors.primary,
+    color: colors.default,
     '&:hover': {
-      backgroundColor: 'rgb(58, 114, 82)',
+      backgroundColor: colors.hover.primary,
     },
     '&.Mui-disabled': {
-      backgroundColor: 'rgba(72, 143, 102, 0.5)',
-      color: '#fff',
+      backgroundColor: colors.disabled.primary,
+      color: colors.disabled.default,
     },
-  },
-  secondary: {
-    backgroundColor: 'rgb(61, 61, 61)',
-    color: 'rgb(72, 143, 102)',
-    border: '2px solid rgb(72, 143, 102)',
-    '&:hover': {
-      backgroundColor: 'rgb(45, 45, 45)',
+    '& .MuiButton-startIcon': {
+      marginRight: '8px',
     },
-    '&.Mui-disabled': {
-      backgroundColor: 'rgba(61, 61, 61, 0.5)',
-      color: 'rgb(72, 143, 102)',
-    },
-  },
-  outlined: {
-    border: '2px solid rgb(72, 143, 102)',
-    backgroundColor: 'transparent',
-    color: 'rgb(72, 143, 102)',
-    '&:hover': {
-      backgroundColor: 'rgba(72, 143, 102, 0.05)',
-      border: '2px solid rgb(72, 143, 102)',
-    },
-    '&.Mui-disabled': {
-      border: '2px solid rgba(72, 143, 102, 0.5)',
-      color: 'rgba(72, 143, 102, 0.5)',
+    '& .MuiButton-endIcon': {
+      marginLeft: '8px',
     },
   },
   dark: {
-    primary: {
-      backgroundColor: 'rgb(111, 207, 151)',
-      color: '#11151F',
-      '&:hover': {
-        backgroundColor: 'rgba(111, 207, 151, 0.8)',
-      },
-      '&.Mui-disabled': {
-        backgroundColor: 'rgba(111, 207, 151, 0.5)',
-        color: '#11151F',
-      },
+    backgroundColor: colors.dark.primary,
+    color: colors.dark.default,
+    '&:hover': {
+      backgroundColor: colors.hover.dark.primary,
     },
-    secondary: {
-      backgroundColor: '#3D3D3D',
-      color: '#6FCF97',
-      broder: '2px solid #6FCF97',
-      '&:hover': {
-        backgroundColor: 'rgb(45, 45, 45)',
-      },
-      '&.Mui-disabled': {
-        backgroundColor: 'rgba(61, 61, 61, 0.5)',
-        color: 'rgba(111, 207, 151, 0.5)',
-      },
+    '&.Mui-disabled': {
+      backgroundColor: colors.disabled.dark.primary,
+      color: colors.disabled.dark.default,
     },
-    outlined: {
-      border: '2px solid #6FCF97',
-      backgroundColor: 'transparent',
-      color: '#6FCF97',
-      '&:hover': {
-        backgroundColor: 'rgba(111, 207, 151, 0.05)',
-        border: '2px solid #6FCF97',
-      },
-      '&.Mui-disabled': {
-        border: '2px solid rgba(111, 207, 151, 0.5)',
-        color: 'rgba(111, 207, 151, 0.5)',
-      },
+    '& .MuiButton-startIcon': {
+      marginRight: '8px',
+    },
+    '& .MuiButton-endIcon': {
+      marginLeft: '8px',
     },
   },
+
+  
 } as const;

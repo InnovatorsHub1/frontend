@@ -1,7 +1,6 @@
 import { ButtonProps as MuiButtonProps } from '@mui/material/Button';
 
-export interface ButtonProps extends Omit<MuiButtonProps, 'variant' | 'size'> {
-  variant?: 'primary' | 'secondary' | 'outlined';
+export interface ButtonProps extends Omit<MuiButtonProps, 'size'> {
   size?: 'sm' | 'md' | 'lg';
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
