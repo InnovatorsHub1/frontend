@@ -1,5 +1,5 @@
 //This file has been created to bridge sx and tailwind
-import { generateColors,BaseColorsProps,StatesType } from './Color';
+import { generateColors, BaseColorsProps, StatesType } from './Color';
 
 const states: StatesType = {
   hover: 0.8,
@@ -32,8 +32,7 @@ const baseColors: Record<'light' | 'dark', BaseColorsProps> = {
   },
 };
 
-
-const colors = generateColors(baseColors.light, baseColors.dark,states);
+const colors = generateColors(baseColors.light, baseColors.dark, states);
 
 const screens = { sm: '480px', md: '768px', lg: '976px', xl: '1440px' };
 

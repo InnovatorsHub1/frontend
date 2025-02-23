@@ -69,11 +69,7 @@ export const IconRight: Story = {
 };
 
 export const LoadingStates = (): ReactNode => {
-  return (
-    <GenericButton loading>
-      Loading
-    </GenericButton>
-  );
+  return <GenericButton loading>Loading</GenericButton>;
 };
 
 export const SizeVariants = (): ReactNode => {

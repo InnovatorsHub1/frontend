@@ -25,7 +25,7 @@ describe('GenericButton Component', () => {
   it('renders primary button correctly', () => {
     const button = screen.getByRole('button', { name: 'Button' });
     expect(button).toHaveClass('MuiButton-root');
-    expect(button.closest('button'))
+    expect(button.closest('button'));
   });
 
   it('renders disabled button correctly', () => {
