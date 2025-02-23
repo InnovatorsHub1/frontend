@@ -26,12 +26,9 @@ export const defaultButton: Story = {
 export const AllSupportedButton = (): ReactNode => {
   return (
     <div className='flex gap-2'>
-      <GenericButton variant='primary'>Primary</GenericButton>
-      <GenericButton variant='secondary'>Secondary</GenericButton>
+      <GenericButton>Default</GenericButton>
       <GenericButton variant='outlined'>Outlined</GenericButton>
-      <GenericButton variant='primary' disabled>
-        Disabled
-      </GenericButton>
+      <GenericButton disabled>Disabled</GenericButton>
     </div>
   );
 };
@@ -44,10 +41,10 @@ export const FormButtons = (): ReactNode => {
         <input type='email' placeholder='Enter email' className='p-2 border rounded' />
       </div>
       <div className='flex gap-2'>
-        <GenericButton type='button' variant='secondary' icon={<SaveIcon fontSize='small' />} iconPosition='left'>
+        <GenericButton type='button' icon={<SaveIcon fontSize='small' />} iconPosition='left'>
           Save Draft
         </GenericButton>
-        <GenericButton type='submit' variant='primary' icon={<SendIcon fontSize='small' />} iconPosition='right'>
+        <GenericButton type='submit' icon={<SendIcon fontSize='small' />} iconPosition='right'>
           Submit Form
         </GenericButton>
       </div>
@@ -73,8 +70,8 @@ export const IconRight: Story = {
 
 export const LoadingStates = (): ReactNode => {
   return (
-    <GenericButton loading variant='primary'>
-      Loading Primary
+    <GenericButton loading>
+      Loading
     </GenericButton>
   );
 };
