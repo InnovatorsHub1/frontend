@@ -75,9 +75,9 @@ export const LoadingStates = (): ReactNode => {
 export const SizeVariants = (): ReactNode => {
   return (
     <div className='flex items-center gap-2'>
-      <GenericButton size='sm'>Small</GenericButton>
-      <GenericButton size='md'>Medium</GenericButton>
-      <GenericButton size='lg'>Large</GenericButton>
+      <GenericButton size='small'>Small</GenericButton>
+      <GenericButton size='medium'>Medium</GenericButton>
+      <GenericButton size='large'>Large</GenericButton>
     </div>
   );
 };

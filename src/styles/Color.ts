@@ -18,12 +18,8 @@ export type StatesType = {
 
 type IStateKeys = keyof StatesType;
 
-type ColorProps = BaseColorsProps & {
-  dark: BaseColorsProps;
-} & {
-  [K in IStateKeys]: {
-    dark: BaseColorsProps;
-  } & BaseColorsProps;
+type ColorProps = BaseColorsProps & { dark: BaseColorsProps } & {
+  [K in IStateKeys]: { dark: BaseColorsProps } & BaseColorsProps;
 };
 
 const createColorVariant = (color: string, opacity: number): string => {
