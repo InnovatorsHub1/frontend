@@ -26,7 +26,7 @@ export default function GenericButton(props: ButtonProps) {
       disabled={disabled || loading}
       startIcon={iconPosition === 'left' && !loading ? icon : undefined}
       endIcon={iconPosition === 'right' && !loading ? icon : undefined}
-      sx={THEME_STYLES[theme]}
+      sx={{ ...THEME_STYLES[theme], ...props.sx }}
     >
       {loadingIndicator}
       {children}
