@@ -2,8 +2,8 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 export type ToggleButtonProps = {
-  value: boolean;
-  setValue: (value: any) => void;
+  value?: boolean;
+  setValue?: (value: any) => void;
   size?: number;
   className?: string;
   style?: any;
