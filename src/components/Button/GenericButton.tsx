@@ -1,13 +1,12 @@
 import { Button as MuiButton } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
 import { ButtonProps } from './ButtonProps';
-import { useTheme } from '../../hooks/useTheme';
 import { THEME_STYLES } from './constants';
-
+import { useDarkTheme } from '@src/providers/DarkThemeProvider/DarkThemeContext';
 export default function GenericButton(props: ButtonProps) {
   const { icon, iconPosition = 'left', loading = false, children, disabled } = props;
 
-  const theme = useTheme();
+  const { theme } = useDarkTheme();
 
   const loadingIndicator = loading && (
     <CircularProgress

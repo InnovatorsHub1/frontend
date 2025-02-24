@@ -1,9 +1,9 @@
 import { type PropsWithChildren, useCallback, useMemo, useState } from 'react';
 import { LS_KEY_THEME } from '../../utils/constants';
-import { DarkThemeContext } from './DarkThemeContext';
+import { DarkThemeContext, Theme } from './DarkThemeContext';
 import { useLocalStorage } from '@src/hooks/useLocalStorage';
 
-const THEME_OPTIONS = { dark: 'dark', light: 'light' };
+const THEME_OPTIONS: { dark: Theme; light: Theme } = { dark: 'dark', light: 'light' };
 
 type DarkThemeProviderProps = PropsWithChildren;
 
@@ -40,7 +40,10 @@ export default function DarkThemeProvider(props: DarkThemeProviderProps) {
     setIsDarkMode(!isDarkMode);
   }, [isDarkMode, setIsDarkMode, setLocalStorageTheme]);
 
-  const value = useMemo(() => ({ isDarkMode, toggleDarkMode }), [isDarkMode, toggleDarkMode]);
+  const value = useMemo(
+    () => ({ isDarkMode, toggleDarkMode, theme: isDarkMode ? THEME_OPTIONS.dark : THEME_OPTIONS.light }),
+    [isDarkMode, toggleDarkMode],
+  );
 
   return <DarkThemeContext.Provider value={value}>{children}</DarkThemeContext.Provider>;
 }
