@@ -1,29 +1,5 @@
 //This file has been created to bridge sx and tailwind
-
-type BaseColorsProps = {
-  default: string;
-  background: string;
-  secondary: string;
-  primary: string;
-  accent: string;
-  forms: string;
-  error: string;
-  success: string;
-  card: string;
-};
-
-type ColorProps = {
-  [key: string]: string | ColorProps | BaseColorsProps;
-} & Record<'dark' | IStateKeys, BaseColorsProps> &
-  BaseColorsProps;
-
-type StatesType = {
-  hover: number;
-  pressed: number;
-  disabled: number;
-};
-
-type IStateKeys = keyof StatesType;
+import { generateColors, BaseColorsProps, StatesType } from './Color';
 
 const states: StatesType = {
   hover: 0.8,
@@ -56,33 +32,7 @@ const baseColors: Record<'light' | 'dark', BaseColorsProps> = {
   },
 };
 
-const createColorVariant = (color: string, opacity: number) => {
-  return color.replace(/[\d.]+\)$/, `${opacity})`);
-};
-
-const themeGenerate = (baseColors: BaseColorsProps, opacity: number): ColorProps => {
-  return Object.entries(baseColors).reduce(
-    (acc, [key, value]) => ({
-      ...acc,
-      [key]: createColorVariant(value, opacity),
-    }),
-    {} as ColorProps,
-  );
-};
-
-// @ts-ignore
-// TODO - will fix it with Mor Bargig
-const colors: ColorProps = {
-  ...baseColors.light,
-  dark: baseColors.dark,
-};
-
-Object.entries(states).forEach(([stateName, opacity]) => {
-  colors[stateName] = {
-    ...themeGenerate(baseColors.light, opacity),
-    dark: themeGenerate(baseColors.dark, opacity),
-  };
-});
+const colors = generateColors(baseColors.light, baseColors.dark, states);
 
 const screens = { sm: '480px', md: '768px', lg: '976px', xl: '1440px' };
 
