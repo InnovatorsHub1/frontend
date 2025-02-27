@@ -46,7 +46,7 @@ export const themeColors = {
   },
 };
 
-export const getTheme = (variant: string) => {
+export const getTheme = (variant: 'light' | 'dark') => {
   const {
     layoutColor,
     layoutBg,
@@ -69,6 +69,7 @@ export const getTheme = (variant: string) => {
           styleOverrides: {
             root: {
               backgroundColor: textFieldBg,
+              borderRadius: 5,
             },
           },
         },

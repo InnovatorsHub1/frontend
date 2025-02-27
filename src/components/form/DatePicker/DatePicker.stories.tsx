@@ -26,9 +26,8 @@ export const AllDatePickers = (): ReactNode => {
   return (
     <div className='flex gap-2'>
       <DatePicker />
-      <DatePicker variant='secondary' />
       <DatePicker label='Choose a date' />
-      <DatePicker label='Choose a date' variant='secondary' />
+      <DatePicker value={new Date()} />
     </div>
   );
 };
