@@ -1,7 +1,5 @@
 import { createTheme } from '@mui/material';
-import { colorsDefine } from '@src/styles/constantsStyle';
-
-const { colors } = colorsDefine;
+import { colors } from '@src/styles/constantsStyle';
 
 export const themeColors = {
   light: {
