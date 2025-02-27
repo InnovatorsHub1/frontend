@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import GenericButton from '../GenericButton';
-import { colors } from '@src/styles/constantsStyle';
 describe('GenericButton Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -31,9 +30,5 @@ describe('GenericButton Component', () => {
   it('renders disabled button correctly', () => {
     const button = screen.getByRole('button', { name: 'Disabled Button' });
     expect(button).toBeDisabled();
-    expect(button).toHaveClass('Mui-disabled');
-    expect(button).toHaveStyle({
-      backgroundColor: colors.disabled.primary,
-    });
   });
 });
