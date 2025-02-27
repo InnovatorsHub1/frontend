@@ -1,6 +1,9 @@
 import { createContext, useContext } from 'react';
 
-export type Theme = 'light' | 'dark';
+export enum Theme {
+  LIGHT = 'light',
+  DARK = 'dark',
+}
 
 type DarkThemeContextProps = {
   isDarkMode: boolean;

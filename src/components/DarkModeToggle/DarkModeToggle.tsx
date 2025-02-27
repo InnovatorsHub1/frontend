@@ -1,12 +1,12 @@
 import { useDarkTheme } from '../../providers/DarkThemeProvider/DarkThemeContext';
 import { ToggleButtonProps, ToggleButton } from '../ToggleButton/ToggleButton';
 
-export default function DarkModeToggle(props: ToggleButtonProps) {
-  const { size, className, value, setValue } = props;
+type DarkModeToggleProps = Omit<ToggleButtonProps, 'value' | 'setValue'>;
 
-  const { isDarkMode, toggleDarkMode } = useDarkTheme();
+export default function DarkModeToggle(props: DarkModeToggleProps) {
+  const { size, className } = props;
 
-  return (
-    <ToggleButton value={value ?? isDarkMode} setValue={setValue ?? toggleDarkMode} size={size} className={className} />
-  );
+  const { isDarkMode, toggleDarkMode, theme } = useDarkTheme();
+
+  return <ToggleButton value={isDarkMode} setValue={toggleDarkMode} theme={theme} size={size} className={className} />;
 }
