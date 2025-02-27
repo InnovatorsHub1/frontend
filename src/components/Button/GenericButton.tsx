@@ -1,63 +1,59 @@
-import { Button } from '@mui/material';
+import { Button as MuiButton } from '@mui/material';
+import CircularProgress from '@mui/material/CircularProgress';
 import { ButtonProps } from './ButtonProps';
-export default function GenericButton({
-  variant,
-  size,
-  children,
-  icon,
-  iconPosition = 'left',
-  loading,
-  disabled,
-  onClick,
-  type,
-  isActive,
-  isActiveAcolor = 'red',
-  isActiveBackgroundColor = 'pink',
-  fullWidth,
-  className,
-  ...props
-}: ButtonProps) {
-  let backgroundColor = props.backgroundColor;
-  let color = props.color;
+import { VARIANT_STYLES } from './constants';
 
-  if (variant === 'primary' && !color && !backgroundColor) {
-    backgroundColor = 'black';
-    color = 'skyblue';
-  } else if (variant === 'secondary' && !color && !backgroundColor) {
-    backgroundColor = 'skyblue';
-    color = 'black';
-  }
-
-  if (type === 'submit') {
-    backgroundColor = 'greenyellow';
-    color = 'green';
-  } else if (type === 'reset') {
-    backgroundColor = 'orange';
-    color = 'pink';
-  }
-
-  const muiVariant = variant === 'outlined' || variant === 'text' ? variant : 'contained';
-
+export default function GenericButton(props: ButtonProps) {
+  const {
+    variant = 'primary',
+    size = 'md',
+    children,
+    iconPosition = 'left',
+    loading = false,
+    className = '',
+    icon,
+    disabled = false,
+  } = props;
   const muiSize = size === 'sm' ? 'small' : size === 'lg' ? 'large' : 'medium';
+  const muiVariant = variant === 'outlined' ? 'outlined' : 'contained';
 
+  const combinedClassName = [className, loading ? 'loading' : ''].filter(Boolean).join(' ');
+  const buttonStyles = {
+    textTransform: 'none',
+    borderRadius: '6px',
+    boxShadow: 'none',
+    fontWeight: 500,
+    position: 'relative',
+    ...VARIANT_STYLES[variant],
+    '&:hover': {
+      boxShadow: 'none',
+      ...VARIANT_STYLES[variant]['&:hover'],
+    },
+  };
+
+  const loadingIndicator = loading && (
+    <CircularProgress
+      size={20}
+      color='inherit'
+      sx={{
+        marginRight: children ? '8px' : 0,
+        color: variant === 'outlined' ? 'rgb(72, 143, 102)' : 'inherit',
+      }}
+    />
+  );
   return (
-    <Button
+    <MuiButton
+      {...props}
       variant={muiVariant}
       size={muiSize}
-      startIcon={iconPosition === 'left' && icon ? icon : undefined}
-      endIcon={iconPosition === 'right' && icon ? icon : undefined}
       disabled={disabled || loading}
-      sx={
-        isActive
-          ? { color: isActiveAcolor, backgroundColor: isActiveBackgroundColor }
-          : { ...props, backgroundColor, color }
-      }
-      onClick={onClick}
-      type={type}
-      fullWidth={fullWidth}
-      className={className}
+      startIcon={iconPosition === 'left' && !loading ? icon : undefined}
+      endIcon={iconPosition === 'right' && !loading ? icon : undefined}
+      className={combinedClassName}
+      sx={buttonStyles}
     >
-      {loading ? loading : children}
-    </Button>
+      {loadingIndicator}
+      {children}
+    </MuiButton>
   );
 }
