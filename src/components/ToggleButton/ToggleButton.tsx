@@ -8,12 +8,11 @@ export type ToggleButtonProps = {
   size?: number;
   className?: string;
   style?: any;
-  theme: Theme;
+  theme?: Theme;
 };
 
 export function ToggleButton(props: ToggleButtonProps) {
-  const { value, setValue, theme, size = 32, className = '', style } = props;
-  console.log(theme);
+  const { value, setValue, size = 32, className = '', style } = props;
 
   const isChecked = value;
 
