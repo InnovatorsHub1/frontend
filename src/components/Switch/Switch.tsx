@@ -1,10 +1,11 @@
 import { Switch as MUISwitch, SwitchProps } from '@mui/material';
+import { colors } from '@src/styles/constantsStyle';
 
 const styleSwitch = {
   '& .MuiSwitch-switchBase': {
     '&.Mui-checked': {
       '& + .MuiSwitch-track': {
-        backgroundColor: '#6FCF97',
+        backgroundColor: colors.primary,
       },
     },
   },
@@ -13,7 +14,7 @@ const styleSwitch = {
     height: 14,
     marginTop: '3px',
     marginLeft: '3px',
-    backgroundColor: '#EDF5FF',
+    backgroundColor: colors.accent,
   },
 };
 export default function Switch(props: SwitchProps) {
