@@ -27,6 +27,7 @@ echo "[34m----------------------[39m"
 echo "[34mStep 2: pnpm run format[39m"
 echo "[34m----------------------[39m"
 
+
 pnpm run format
 
 echo ""
