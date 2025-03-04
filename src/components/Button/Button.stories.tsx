@@ -12,7 +12,6 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['new', 'version:1.0.0'],
   decorators: [
     (Story) => (
       <DarkThemeProvider>
@@ -20,6 +19,7 @@ const meta = {
       </DarkThemeProvider>
     ),
   ],
+  tags: ['new', 'version:1.0.0'],
 } satisfies Meta<typeof GenericButton>;
 
 export default meta;
