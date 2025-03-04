@@ -4,7 +4,7 @@ import { ButtonProps } from './ButtonProps';
 import { THEME_STYLES } from './constants';
 import { useDarkTheme } from '@src/providers/DarkThemeProvider/DarkThemeContext';
 export default function GenericButton(props: ButtonProps) {
-  const { icon, iconPosition = 'left', loading = false, children, disabled } = props;
+  const { icon, iconPosition = 'left', loading, children, disabled } = props;
 
   const { theme } = useDarkTheme();
 
