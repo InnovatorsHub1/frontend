@@ -2,7 +2,6 @@ import GenericButton from './GenericButton';
 import { Meta } from '@storybook/react';
 import { ReactNode } from 'react';
 import SendIcon from '@mui/icons-material/Send';
-import SaveIcon from '@mui/icons-material/Save';
 import DarkThemeProvider from '@src/providers/DarkThemeProvider';
 import DarkModeToggle from '@src/components/DarkModeToggle';
 
