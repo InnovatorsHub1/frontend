@@ -23,6 +23,9 @@ importers:
       '@reduxjs/toolkit':
         specifier: ^2.2.7
         version: 2.5.0(react-redux@9.2.0(@types/react@19.0.2)(react@19.0.0)(redux@5.0.1))(react@19.0.0)
+      '@remixicon/react':
+        specifier: ^4.6.0
+        version: 4.6.0(react@19.0.0)
       axios:
         specifier: ^1.7.9
         version: 1.7.9
@@ -148,7 +151,7 @@ importers:
         specifier: ^15.12.0
         version: 15.14.0
       husky:
-        specifier: ^9.1.7
+        specifier: ^9.1.4
         version: 9.1.7
       identity-obj-proxy:
         specifier: ^3.0.0
@@ -1446,6 +1449,11 @@ packages:
         optional: true
       react-redux:
         optional: true
+
+  '@remixicon/react@4.6.0':
+    resolution: {integrity: sha512-bY56maEgT5IYUSRotqy9h03IAKJC85vlKtWFg2FKzfs8JPrkdBAYSa9dxoUSKFwGzup8Ux6vjShs9Aec3jvr2w==}
+    peerDependencies:
+      react: '>=18.2.0'
 
   '@rollup/pluginutils@5.1.4':
     resolution: {integrity: sha512-USm05zrsFxYLPdWWq+K3STlWiT/3ELn3RcV5hJMghpeAIhxfsUIg6mt12CBJBInWMV4VneoV7SfGv8xIwo2qNQ==}
@@ -6645,6 +6653,10 @@ snapshots:
     optionalDependencies:
       react: 19.0.0
       react-redux: 9.2.0(@types/react@19.0.2)(react@19.0.0)(redux@5.0.1)
+
+  '@remixicon/react@4.6.0(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
 
   '@rollup/pluginutils@5.1.4(rollup@4.29.1)':
     dependencies:
