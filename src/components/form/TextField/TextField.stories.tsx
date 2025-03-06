@@ -63,7 +63,6 @@ export const ContactForm = (): ReactNode => {
 
       <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4 bg-gray-800 p-4 rounded-lg'>
         <TextField
-          className='bg-white'
           type='email'
           placeholder='Your email'
           isError={!!errors.email}
@@ -77,7 +76,6 @@ export const ContactForm = (): ReactNode => {
           })}
         />
         <TextField
-          className='bg-white'
           type='text'
           id='name'
           placeholder='Your name'
@@ -92,7 +90,6 @@ export const ContactForm = (): ReactNode => {
           })}
         />
         <TextField
-          className='bg-white'
           placeholder='Your message'
           multiline
           rows={4}

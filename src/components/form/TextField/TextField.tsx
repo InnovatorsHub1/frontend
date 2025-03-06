@@ -4,13 +4,12 @@ import { getInputIcon } from './constants';
 import { colors } from '@src/styles/constantsStyle';
 
 export interface ITextFieldProps extends Omit<TextFieldProps, 'className'> {
-  className?: string;
   errorMessage?: string;
   isError?: boolean;
 }
 
 export default function TextField(props: ITextFieldProps) {
-  const { className, name, type, errorMessage, isError, placeholder, multiline, rows } = props;
+  const { name, type, errorMessage, isError, placeholder, multiline, rows } = props;
 
   const inputIcon = getInputIcon(type, name);
   const colorError = { color: isError ? colors.error : '' };
@@ -18,7 +17,7 @@ export default function TextField(props: ITextFieldProps) {
     <div className={'flex flex-col'}>
       <label className='pl-2 text-white'>{name || type}</label>
       <MUITextField
-        className={`rounded-md ${className}`}
+        className={`rounded-md`}
         slotProps={
           !multiline
             ? {
