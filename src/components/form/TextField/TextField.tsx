@@ -40,6 +40,20 @@ export default function TextField(props: ITextFieldProps) {
           '& .MuiInputBase-input': {
             ...colorError,
           },
+          '& .MuiOutlinedInput-root': {
+            '&.Mui-focused': {
+              '& .MuiOutlinedInput-notchedOutline': {
+                borderColor: colors.success,
+                borderWidth: '2px',
+              },
+              '& .MuiInputAdornment-root': {
+                color: colors.success,
+              },
+            },
+            '&:hover .MuiOutlinedInput-notchedOutline': {
+              borderColor: colors.success,
+            },
+          },
         }}
         helperText={errorMessage}
         error={isError}
