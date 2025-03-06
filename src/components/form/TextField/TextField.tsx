@@ -1,8 +1,7 @@
-import { HelpOutline } from '@mui/icons-material';
 import { InputAdornment, TextField as MUITextField, TextFieldProps } from '@mui/material';
-import { getInputIcon } from './constants';
+import { getRemixIcon } from './constants';
 import { colors } from '@src/styles/constantsStyle';
-
+import { RiQuestionLine } from '@remixicon/react';
 export interface ITextFieldProps extends Omit<TextFieldProps, 'className'> {
   errorMessage?: string;
   isError?: boolean;
@@ -11,7 +10,7 @@ export interface ITextFieldProps extends Omit<TextFieldProps, 'className'> {
 export default function TextField(props: ITextFieldProps) {
   const { name, type, errorMessage, isError, placeholder, multiline, rows } = props;
 
-  const inputIcon = getInputIcon(type, name);
+  const iconComponent = getRemixIcon(type, name);
   const colorError = { color: isError ? colors.error : '' };
   return (
     <div className={'flex flex-col'}>
@@ -23,12 +22,12 @@ export default function TextField(props: ITextFieldProps) {
                 input: {
                   startAdornment: (
                     <InputAdornment position='start' sx={colorError}>
-                      {inputIcon}
+                      {iconComponent}
                     </InputAdornment>
                   ),
                   endAdornment: (
                     <InputAdornment position='end'>
-                      <HelpOutline sx={colorError} />
+                      <RiQuestionLine size={20} />
                     </InputAdornment>
                   ),
                 },
