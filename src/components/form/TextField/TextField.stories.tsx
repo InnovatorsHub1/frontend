@@ -61,7 +61,7 @@ export const ContactForm = (): ReactNode => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4 bg-gray-800 p-4 rounded-lg'>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <TextField
           type='email'
           placeholder='Your email'
