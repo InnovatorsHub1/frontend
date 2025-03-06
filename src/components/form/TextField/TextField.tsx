@@ -1,6 +1,7 @@
 import { HelpOutline } from '@mui/icons-material';
 import { InputAdornment, TextField as MUITextField, TextFieldProps } from '@mui/material';
 import { getInputIcon } from './constants';
+import { colors } from '@src/styles/constantsStyle';
 
 export interface ITextFieldProps extends Omit<TextFieldProps, 'className'> {
   className?: string;
@@ -23,24 +24,24 @@ export default function TextField(props: ITextFieldProps) {
             ? {
                 input: {
                   startAdornment: (
-                    <InputAdornment position='start' sx={{ color: isError ? 'red' : '' }}>
+                    <InputAdornment position='start' sx={{ color: isError ? colors.error : '' }}>
                       {inputIcon}
                     </InputAdornment>
                   ),
                   endAdornment: (
                     <InputAdornment position='end'>
-                      <HelpOutline sx={{ color: isError ? 'red' : '' }} />
+                      <HelpOutline sx={{ color: isError ? colors.error : '' }} />
                     </InputAdornment>
                   ),
                 },
               }
             : {}
         }
-        // sx={{
-        //   '& .MuiInputBase-input::placeholder': {
-        //     color: colors
-        //   },
-        // }}
+        sx={{
+          '& .MuiInputBase-input::placeholder': {
+            color: colors.error,
+          },
+        }}
         helperText={errorMessage}
         error={isError}
         name={name}
