@@ -15,7 +15,6 @@ export default function TextField(props: ITextFieldProps) {
   const colorError = { color: isError ? colors.error : '' };
   return (
     <div className={'flex flex-col'}>
-      <label className='pl-2'>{name || type}</label>
       <MUITextField
         className={`rounded-md`}
         slotProps={
