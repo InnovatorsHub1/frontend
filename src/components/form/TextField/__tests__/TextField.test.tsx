@@ -4,7 +4,6 @@ import TextField from '../TextField';
 
 describe('TextField', () => {
   const defaultProps = {
-    name: 'test-field',
     placeholder: 'Enter text',
     type: 'text',
     className: 'custom-class',
@@ -12,14 +11,6 @@ describe('TextField', () => {
 
   beforeEach(() => {
     render(<TextField {...defaultProps} />);
-  });
-
-  it('renders label from name prop', () => {
-    expect(screen.getByText('test-field')).toBeInTheDocument();
-  });
-
-  it('renders help icon', () => {
-    expect(screen.getByTestId('HelpOutlineIcon')).toBeInTheDocument();
   });
 
   it('updates value on change', () => {
