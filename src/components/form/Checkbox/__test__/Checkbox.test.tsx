@@ -1,45 +1,34 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import Checkbox from '../Checkbox';
+import Checkbox, { ICheckboxProps } from '../Checkbox';
 
 describe('Checkbox Component', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-    render(
-      <>
-        <Checkbox disabled />
-        <Checkbox checked />
-        <Checkbox size='small' />
-      </>,
-    );
-  });
+  const defaultProps: ICheckboxProps = {
+    disabled: true,
+    checked: true,
+    size: 'small',
+  };
 
-  afterEach(() => {
-    jest.resetAllMocks();
+  beforeEach(() => {
+    render(<Checkbox {...defaultProps} />);
   });
 
   it('should render a disabled checkbox', () => {
-    const checkboxes = screen.getAllByRole('checkbox');
-    const disabledCheckbox = checkboxes.find((checkbox) => (checkbox as HTMLInputElement).disabled);
-    expect(disabledCheckbox).toBeInTheDocument();
-    expect(disabledCheckbox).toBeDisabled();
+    const checkbox = screen.getByRole('checkbox');
+    expect(checkbox).toBeInTheDocument();
+    expect(checkbox).toBeDisabled();
   });
 
   it('should render a checked checkbox', () => {
-    const checkboxes = screen.getAllByRole('checkbox');
-    const checkedCheckbox = checkboxes.find((checkbox) => (checkbox as HTMLInputElement).checked);
-    expect(checkedCheckbox).toBeInTheDocument();
-    expect(checkedCheckbox).toBeChecked();
+    const checkbox = screen.getByRole('checkbox');
+    expect(checkbox).toBeInTheDocument();
+    expect(checkbox).toBeChecked();
   });
 
   it('should render a small checkbox', () => {
-    const checkboxes = screen.getAllByRole('checkbox');
-    const smallCheckbox = checkboxes.find(
-      (checkbox) => !(checkbox as HTMLInputElement).disabled && !(checkbox as HTMLInputElement).checked,
-    );
-    expect(smallCheckbox).toBeInTheDocument();
-    if (smallCheckbox?.getAttribute('size') === 'small') {
-      expect(smallCheckbox).toHaveAttribute('size', 'small');
+    const checkbox = screen.getByRole('checkbox');
+    expect(checkbox).toBeInTheDocument();
+    if (checkbox?.getAttribute('size') === 'small') {
+      expect(checkbox).toHaveAttribute('size', 'small');
     }
   });
 });

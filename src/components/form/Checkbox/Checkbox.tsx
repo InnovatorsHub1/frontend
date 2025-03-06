@@ -2,7 +2,7 @@ import { Checkbox as MUICheckbox, CheckboxProps } from '@mui/material';
 import { THEME_STYLE } from './constants';
 import { useDarkTheme } from '@src/providers/DarkThemeProvider/DarkThemeContext';
 
-interface ICheckboxProps extends CheckboxProps {
+export interface ICheckboxProps extends CheckboxProps {
   checked?: boolean;
   size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
