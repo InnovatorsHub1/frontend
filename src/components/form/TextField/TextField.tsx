@@ -13,7 +13,7 @@ export default function TextField(props: ITextFieldProps) {
   const { className, name, type, errorMessage, isError, placeholder, multiline, rows } = props;
 
   const inputIcon = getInputIcon(type, name);
-
+  const colorError = { color: isError ? colors.error : '' };
   return (
     <div className={'flex flex-col'}>
       <label className='pl-2 text-white'>{name || type}</label>
@@ -24,13 +24,13 @@ export default function TextField(props: ITextFieldProps) {
             ? {
                 input: {
                   startAdornment: (
-                    <InputAdornment position='start' sx={{ color: isError ? colors.error : '' }}>
+                    <InputAdornment position='start' sx={colorError}>
                       {inputIcon}
                     </InputAdornment>
                   ),
                   endAdornment: (
                     <InputAdornment position='end'>
-                      <HelpOutline sx={{ color: isError ? colors.error : '' }} />
+                      <HelpOutline sx={colorError} />
                     </InputAdornment>
                   ),
                 },
@@ -38,8 +38,8 @@ export default function TextField(props: ITextFieldProps) {
             : {}
         }
         sx={{
-          '& .MuiInputBase-input::placeholder': {
-            color: colors.error,
+          '& .MuiInputBase-input': {
+            ...colorError,
           },
         }}
         helperText={errorMessage}
