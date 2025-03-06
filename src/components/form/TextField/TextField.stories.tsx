@@ -79,6 +79,7 @@ export const ContactForm = (): ReactNode => {
         <TextField
           className='bg-white'
           type='text'
+          id='name'
           placeholder='Your name'
           isError={!!errors.name}
           errorMessage={errors.name?.message}

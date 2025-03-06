@@ -1,5 +1,6 @@
-import { EmailOutlined, HelpOutline } from '@mui/icons-material';
+import { HelpOutline } from '@mui/icons-material';
 import { InputAdornment, TextField as MUITextField, TextFieldProps } from '@mui/material';
+import { getInputIcon } from './constants';
 
 export interface ITextFieldProps extends Omit<TextFieldProps, 'className'> {
   className?: string;
@@ -10,6 +11,8 @@ export interface ITextFieldProps extends Omit<TextFieldProps, 'className'> {
 export default function TextField(props: ITextFieldProps) {
   const { className, name, type, errorMessage, isError, placeholder, multiline, rows } = props;
 
+  const inputIcon = getInputIcon(type, name);
+
   return (
     <div className={'flex flex-col'}>
       <label className='pl-2 text-white'>{name || type}</label>
@@ -19,11 +22,7 @@ export default function TextField(props: ITextFieldProps) {
           !multiline
             ? {
                 input: {
-                  startAdornment: (
-                    <InputAdornment position='start'>
-                      <EmailOutlined />
-                    </InputAdornment>
-                  ),
+                  startAdornment: <InputAdornment position='start'>{inputIcon}</InputAdornment>,
                   endAdornment: (
                     <InputAdornment position='end'>
                       <HelpOutline />
@@ -40,6 +39,7 @@ export default function TextField(props: ITextFieldProps) {
         placeholder={placeholder}
         multiline={multiline}
         rows={rows}
+        {...props}
       />
     </div>
   );
