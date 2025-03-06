@@ -22,16 +22,25 @@ export default function TextField(props: ITextFieldProps) {
           !multiline
             ? {
                 input: {
-                  startAdornment: <InputAdornment position='start'>{inputIcon}</InputAdornment>,
+                  startAdornment: (
+                    <InputAdornment position='start' sx={{ color: isError ? 'red' : '' }}>
+                      {inputIcon}
+                    </InputAdornment>
+                  ),
                   endAdornment: (
                     <InputAdornment position='end'>
-                      <HelpOutline />
+                      <HelpOutline sx={{ color: isError ? 'red' : '' }} />
                     </InputAdornment>
                   ),
                 },
               }
             : {}
         }
+        // sx={{
+        //   '& .MuiInputBase-input::placeholder': {
+        //     color: colors
+        //   },
+        // }}
         helperText={errorMessage}
         error={isError}
         name={name}

@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import clsx from 'clsx';
+import { Theme } from '@src/providers/DarkThemeProvider/DarkThemeContext';
 
-type ToggleButtonProps = {
+export type ToggleButtonProps = {
   value: boolean;
   setValue: (value: any) => void;
   size?: number;
   className?: string;
   style?: any;
+  theme?: Theme;
 };
 
-export default function ToggleButton(props: ToggleButtonProps) {
+export function ToggleButton(props: ToggleButtonProps) {
   const { value, setValue, size = 32, className = '', style } = props;
 
   const isChecked = value;
