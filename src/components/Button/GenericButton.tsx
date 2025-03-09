@@ -7,7 +7,7 @@ export default function GenericButton(props: ButtonProps) {
   const { icon, loading, children, disabled, iconPosition = 'left' } = props;
 
   const { theme } = useDarkTheme();
-
+  const styleButton = THEME_STYLES(theme);
   const loadingIndicator = loading && (
     <CircularProgress
       size={20}
@@ -25,7 +25,7 @@ export default function GenericButton(props: ButtonProps) {
       disabled={disabled || loading}
       startIcon={iconPosition === 'left' && !loading ? icon : undefined}
       endIcon={iconPosition === 'right' && !loading ? icon : undefined}
-      sx={{ ...THEME_STYLES[theme], ...props.sx }}
+      sx={{ ...styleButton, ...props.sx }}
     >
       {loadingIndicator}
       {children}

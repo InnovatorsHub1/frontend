@@ -1,27 +1,5 @@
+import { Theme } from '@src/providers/DarkThemeProvider/DarkThemeContext';
 import { colors } from '@src/styles/constantsStyle';
-const buttonLight = {
-  backgroundColor: colors.primary,
-  color: colors.default,
-  '&:hover': {
-    backgroundColor: colors.hover.primary,
-  },
-  '&.Mui-disabled': {
-    backgroundColor: colors.disabled.primary,
-    color: colors.disabled.default,
-  },
-};
-
-const buttonDark = {
-  backgroundColor: colors.dark.primary,
-  color: colors.dark.default,
-  '&:hover': {
-    backgroundColor: colors.hover.dark.primary,
-  },
-  '&.Mui-disabled': {
-    backgroundColor: colors.disabled.dark.primary,
-    color: colors.disabled.dark.default,
-  },
-};
 
 const buttonIcons = {
   '& .MuiButton-startIcon': {
@@ -32,13 +10,16 @@ const buttonIcons = {
   },
 };
 
-export const THEME_STYLES = {
-  light: {
-    ...buttonLight,
+export const THEME_STYLES = (theme: Theme) =>
+  ({
+    backgroundColor: theme === 'light' ? colors.primary : colors.dark.primary,
+    color: theme === 'light' ? colors.default : colors.dark.default,
+    '&:hover': {
+      backgroundColor: theme === 'light' ? colors.hover.primary : colors.hover.dark.primary,
+    },
+    '&.Mui-disabled': {
+      backgroundColor: theme === 'light' ? colors.disabled.primary : colors.disabled.dark.primary,
+      color: theme === 'light' ? colors.disabled.default : colors.disabled.dark.default,
+    },
     ...buttonIcons,
-  },
-  dark: {
-    ...buttonDark,
-    ...buttonIcons,
-  },
-} as const;
+  }) as const;
