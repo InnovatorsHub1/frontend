@@ -41,6 +41,7 @@
 /* storybook override */
 .css-k7lbue {
   height: 100dvh !important;
+  width: 100vw !important;
   overflow-y: scroll !important;
 }
 
