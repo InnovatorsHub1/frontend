@@ -1,5 +1,5 @@
 import GenericButton from './GenericButton';
-import { Meta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { ReactNode } from 'react';
 import SendIcon from '@mui/icons-material/Send';
 import DarkThemeProvider from '@src/providers/DarkThemeProvider';
@@ -24,6 +24,13 @@ const meta = {
 
 export default meta;
 
+type Story = StoryObj<typeof meta>;
+
+export const defaultButton: Story = {
+  args: {
+    children: 'default',
+  },
+};
 export const AllSupportedButton = (): ReactNode => {
   return (
     <div className='flex gap-2'>
@@ -31,10 +38,6 @@ export const AllSupportedButton = (): ReactNode => {
       <GenericButton disabled>Disabled</GenericButton>
     </div>
   );
-};
-
-export const defaultButton = (): ReactNode => {
-  return <GenericButton>Default</GenericButton>;
 };
 
 export const IconRight = (): ReactNode => {
@@ -52,7 +55,6 @@ export const LoadingStates = (): ReactNode => {
 export const SizeVariants = (): ReactNode => {
   return (
     <div className='flex items-center gap-2'>
-      <DarkModeToggle size={20} className='mb-4' />
       <GenericButton size='small'>Small</GenericButton>
       <GenericButton size='medium'>Medium</GenericButton>
       <GenericButton size='large'>Large</GenericButton>
