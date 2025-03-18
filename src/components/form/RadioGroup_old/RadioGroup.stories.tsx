@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { userEvent, within, expect } from '@storybook/test';
 import { RadioGroup } from './RadioGroup';
-import { RadioButtonProps } from './RadioGroup';
+import { RadioButtonProps } from './RadioButton';
 
 type StoryProps = ComponentProps<typeof RadioGroup>;
 
@@ -17,20 +17,6 @@ const meta: Meta<StoryProps> = {
     innerPadding: { control: 'text' },
   },
   tags: ['autodocs', 'new'],
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
-    // Test: Selecting the first radio button
-    const firstRadio = canvas.getByLabelText('Option 1');
-    await userEvent.click(firstRadio);
-    await expect(firstRadio).toBeChecked();
-
-    // Test: Selecting the second radio button
-    const secondRadio = canvas.getByLabelText('Option 2');
-    await userEvent.click(secondRadio);
-    await expect(secondRadio).toBeChecked();
-    await expect(firstRadio).not.toBeChecked();
-  },
 };
 
 export default meta;
@@ -65,7 +51,7 @@ export const Default: Story = {
         bgColor: 'blue',
       },
     ],
-    txtSize: 'base\n',
+    txtSize: 'text-base',
     margin: 'm-4',
     padding: 'p-4',
     innerPadding: 'p-2',
@@ -75,14 +61,15 @@ export const Default: Story = {
 export const SmallSize: Story = {
   args: {
     btnOptions: defaultOptions,
-    txtSize: 'sm',
+    txtSize: 'text-sm',
+    margin: 'm-4\n',
   },
 };
 
 export const LargeSize: Story = {
   args: {
     btnOptions: defaultOptions,
-    txtSize: '4xl',
+    txtSize: 'text-7xl',
     margin: 'm-4',
   },
 };

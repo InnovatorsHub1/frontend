@@ -1,60 +1,32 @@
-import React from 'react';
+import RadioButton, { RadioButtonProps } from './RadioButton';
 
-export interface RadioButtonProps {
-  value: string;
-  name: string;
-  txtColor?: string;
-  bgColor?: string;
-}
-
-interface RadioGroupProps {
+export type RadioGroupProps = {
   btnOptions: RadioButtonProps[];
-  txtSize?: string;
+  txtSize?: 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-4xl' | 'text-7xl';
   margin?: string;
   padding?: string;
   innerPadding?: string;
-  onChange?: (value: string) => void;
-}
+  bgColor?: string;
+  txtColor?: string;
+};
 
-export const RadioGroup: React.FC<RadioGroupProps> = ({
-  btnOptions,
-  txtSize = 'text-xl',
-  margin = 'm-4',
-  padding = 'p-4',
-  innerPadding = 'p-2',
-  onChange
-}) => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange?.(event.target.value);
-  };
-
+export function RadioGroup(props: RadioGroupProps) {
+  const { btnOptions, txtColor, bgColor, txtSize, margin, padding, innerPadding } = props;
   return (
-    <div className={`radio-group-container ${txtSize} ${margin} ${padding}`} style={{ display: 'flex' }}>
+    <div
+      data-testid='radio-group'
+      className={`radio-group-container ${txtColor} ${bgColor} ${txtSize} ${margin} ${padding}`}
+      style={{ display: 'flex', fontSize: txtSize }}
+    >
       {btnOptions.map((option) => {
-        // Create a unique ID using the value
-        const id = `radio-${option.value.toLowerCase().replace(/\s+/g, '-')}`;
-        
         return (
-          <div key={option.value} className={innerPadding}>
-            <input
-              type="radio"
-              id={id}
-              name={option.name}
-              value={option.value}
-              onChange={handleChange}
-              className="mr-2"
-            />
-            <label
-              htmlFor={id}
-              className={`${option.txtColor ? `text-${option.txtColor}-200` : ''} ${
-                option.bgColor ? `bg-${option.bgColor}-900` : ''
-              }`}
-            >
-              {option.value}
-            </label>
+          <div key={option.value} className={`${innerPadding}`}>
+            {/* BUG: the number is blocking the tailwind txtColor: for example only for -500 red works. for -700 green works */}
+            <span className={`text-${option.txtColor}-200 bg-${option.bgColor}-900`}> {option.value} </span>
+            <RadioButton name={option.name} value={option.value} />
           </div>
         );
       })}
     </div>
   );
-};
+}
