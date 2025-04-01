@@ -27,14 +27,18 @@
     "chromatic": "npx chromatic --project-token=chpt_70aa4b0bdd2591c"
   },
   "dependencies": {
+    "@date-io/date-fns": "^3.2.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.4.0",
+    "@mui/lab": "5.0.0-alpha.175",
     "@mui/material": "^6.3.0",
+    "@mui/x-date-pickers": "^7.26.0",
     "@reduxjs/toolkit": "^2.2.7",
     "@remixicon/react": "^4.6.0",
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
+    "date-fns": "^2.30.0",
     "jest-environment-jsdom": "^29.7.0",
     "js-cookie": "^3.0.5",
     "react": "^19.0.0",
@@ -65,6 +69,7 @@
     "@storybook/test": "^8.4.7",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.0.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.1.0",
     "@types/react": "^19.0.2",
@@ -73,7 +78,6 @@
     "@vitejs/plugin-react-swc": "^3.7.0",
     "autoprefixer": "^10.4.20",
     "babel-jest": "^29.7.0",
-    "chromatic": "^11.25.2",
     "eslint": "^9.18.0",
     "eslint-plugin-react-compiler": "19.0.0-beta-a7bf2bd-20241110",
     "eslint-plugin-storybook": "^0.11.2",
@@ -98,8 +102,6 @@
     "vite": "^6.0.6"
   },
   "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
+    "extends": ["plugin:storybook/recommended"]
   }
 }

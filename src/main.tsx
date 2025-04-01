@@ -8,6 +8,9 @@ import { createStore } from './store';
 import SuspenseUntilReady from './components/SuspenseUntilReady';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import DarkThemeProvider from './providers/DarkThemeProvider';
+import { createTheme, ThemeProvider } from '@mui/material';
+
+const theme = createTheme();
 
 const gradientStyle = `
     font-size: 20px;
@@ -31,7 +34,9 @@ function Client() {
           <BrowserRouter>
             <ErrorBoundary>
               <DarkThemeProvider>
-                <App />
+                <ThemeProvider theme={theme}>
+                  <App />
+                </ThemeProvider>
               </DarkThemeProvider>
             </ErrorBoundary>
           </BrowserRouter>
