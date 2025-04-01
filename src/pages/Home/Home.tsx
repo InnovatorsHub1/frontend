@@ -1,3 +1,5 @@
+import GenericButton from '@src/components/Button';
+
 export default function HomePage() {
-  return <div className='size-full p-6'> </div>;
+  return <h1>Home</h1>;
 }
