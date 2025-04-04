@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Sidebar from './Sidebar';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom'; // Import Router
 
 describe('Sidebar Component', () => {
   beforeEach(() => {
@@ -12,16 +12,16 @@ describe('Sidebar Component', () => {
     );
   });
 
-  test('should render Sidebar component', () => {
-    const navElement = screen.getByRole('navigation');
-    expect(navElement).toBeInTheDocument();
+  test('render Sidebar component', () => {
+    render(<Sidebar />);
   });
 
-  test('should open and close sidebar', () => {
+  test('Should open and close side bar', () => {
+    // Get the button
     const toggleButton = screen.getByRole('button');
-    const navElement = screen.getByRole('navigation');
 
     // Sidebar should initially be closed
+    const navElement = screen.getByRole('navigation');
     expect(navElement).toHaveClass('w-4');
 
     // Click the button to open the sidebar

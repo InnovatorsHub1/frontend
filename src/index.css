@@ -38,6 +38,8 @@
   opacity: 0.5;
 }
 
+<<<<<<< HEAD
+=======
 /* storybook override */
 .css-k7lbue {
   height: 100dvh !important;
@@ -45,6 +47,7 @@
   overflow-y: scroll !important;
 }
 
+>>>>>>> f4e5e42f302acda01f6d6a475c3e3f5800635260
 @layer base {
   html {
     @apply w-full;

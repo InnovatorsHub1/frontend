@@ -21,7 +21,10 @@ echo "[32m√[39m All type were checked. passed."
 echo ""
 echo "[32mChecked all files in $elapsed_time seconds[39m"
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> f4e5e42f302acda01f6d6a475c3e3f5800635260
 echo ""
 echo "[34m----------------------[39m"
 echo "[34mStep 2: pnpm run format[39m"

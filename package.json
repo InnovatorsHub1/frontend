@@ -82,6 +82,8 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^26.0.0",
+
     "jest-fetch-mock": "^3.0.3",
     "jsdom": "^26.0.0",
     "postcss": "^8.4.40",
@@ -98,8 +100,6 @@
     "vite": "^6.0.6"
   },
   "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
+    "extends": ["plugin:storybook/recommended"]
   }
 }
